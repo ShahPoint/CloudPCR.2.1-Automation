@@ -15,15 +15,23 @@ namespace CloudPCR2._1_Automation.TestCases
         [TestMethod]
         public void VerifyPCRCanBeAddedAndDeleted()
         {
+            string randomName = "TeamcityPCR" + new Random().Next();
             LoginPageObjects.EnterLoginDetails(GlobalVariables.userName, GlobalVariables.password);
             LoginPageObjects.ClickStartDemoButton();
             HomePageObjects.VerifyHomePageDisplayed(GlobalVariables.userName);
             HomePageObjects.ClickCreatePCRButton();
             CreateNewPCRPageObjects.SelectValueInDispositionDropdown("Cancelled");
-            CreateNewPCRPageObjects.EnterIncidentNum("TeamcityPCR");
+            CreateNewPCRPageObjects.EnterIncidentNum(randomName);
             CreateNewPCRPageObjects.ClickSaveButtonFromOptionsDropdown();
             CreateNewPCRPageObjects.VerifyPCRSyncMessageDisplay();
             CreateNewPCRPageObjects.ClickBackButton();
+            HomePageObjects.ClickQAPcr();
+            QAAdminPageObjects.EnterTextInIncidentTextbox(randomName);
+            QAAdminPageObjects.ClickOnActionsButton();
+            QAAdminPageObjects.ClickOnDeleteButton();
+            QAAdminPageObjects.ClickOnYesButton();
+            QAAdminPageObjects.VerifyFirstIncidentValueNotDisplay(randomName);
+
         }
     }
     

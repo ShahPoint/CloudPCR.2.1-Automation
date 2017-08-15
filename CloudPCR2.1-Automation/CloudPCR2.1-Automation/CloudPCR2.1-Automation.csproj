@@ -58,6 +58,7 @@
     <Compile Include="PageObjects\CreateNewPCRPageObjects.cs" />
     <Compile Include="PageObjects\HomePageObjects.cs" />
     <Compile Include="PageObjects\LoginPageObjects.cs" />
+    <Compile Include="PageObjects\QAAdminPageObjects.cs" />
     <Compile Include="TestCases\CloudPCRTestCases.cs" />
     <Compile Include="TestCases\DriverScenarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

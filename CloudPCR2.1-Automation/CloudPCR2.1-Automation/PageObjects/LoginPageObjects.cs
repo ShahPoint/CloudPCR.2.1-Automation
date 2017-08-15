@@ -25,7 +25,7 @@ namespace CloudPCR2._1_Automation.PageObjects
 
         public static void ClickStartDemoButton()
         {
-            Thread.Sleep(30000);
+            Thread.Sleep(50000);
             driver.FindElement(startDemoButton).Click();
             Thread.Sleep(3000);
         }

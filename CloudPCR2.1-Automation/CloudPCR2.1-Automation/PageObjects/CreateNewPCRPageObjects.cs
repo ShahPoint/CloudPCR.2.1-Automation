@@ -50,7 +50,7 @@ namespace CloudPCR2._1_Automation.PageObjects
         public static void ClickBackButton()
         {
             driver.FindElement(backButton).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
         }
     }
 }
