@@ -12,6 +12,13 @@ namespace CloudPCR2._1_Automation.TestCases
     [TestClass]
    public class CloudPCRTestCases : DriverScenarios
     {
+        PCRVariables pcr = new PCRVariables();
+
+        public CloudPCRTestCases()
+        { 
+           pcr= SeedData(pcr);
+        }       
+
         [TestMethod]
         public void VerifyPCRCanBeAddedAndDeleted()
         {
@@ -31,6 +38,47 @@ namespace CloudPCR2._1_Automation.TestCases
             QAAdminPageObjects.ClickOnDeleteButton();
             QAAdminPageObjects.ClickOnYesButton();
             QAAdminPageObjects.VerifyFirstIncidentValueNotDisplay(randomName);
+
+        }
+
+
+        [TestMethod]
+        public void VerifyPCRCanBeAddedWithAllTheValueValues()
+        {
+            string randomName = "TeamcityPCR" + new Random().Next();
+            LoginPageObjects.EnterLoginDetails(GlobalVariables.userName, GlobalVariables.password);
+            LoginPageObjects.ClickStartDemoButton();
+            HomePageObjects.VerifyHomePageDisplayed(GlobalVariables.userName);
+            HomePageObjects.ClickCreatePCRButton();
+            CreateNewPCRPageObjects.EnterIncidentDetails(pcr);
+            CreateNewPCRPageObjects.EnterSceneAddressDetails();
+            CreateNewPCRPageObjects.EnterCrewDetails();
+            CreateNewPCRPageObjects.EnterLocationDetails();
+            CreateNewPCRPageObjects.EnterDispatchDetails();
+            CreateNewPCRPageObjects.EnterMileageDetails();
+            CreateNewPCRPageObjects.EnterTimesDetails();
+            CreateNewPCRPageObjects.EnterDelaysDetails();
+            CreateNewPCRPageObjects.EnterOthersOnSceneDetails();
+            CreateNewPCRPageObjects.SelectValueInDispositionDropdown("Cancelled");
+
+            HomePageObjects.ClickSideIconLink("Patient");
+            PatientHomePageObjects.EnterPatientImmunizationsDetails();
+            PatientHomePageObjects.EnterPersonalDetails();
+            PatientHomePageObjects.EnterPatientMedicationsDetails();
+            PatientHomePageObjects.EnterMedicalInfoDetails();
+            PatientHomePageObjects.EnterPatientInfoDetails();
+            PatientHomePageObjects.EnterPatientAddressDetails();
+
+            HomePageObjects.ClickSideIconLink("Assessment");
+
+            AssessmentPageObjects.EnterImpressionDetails();
+            AssessmentPageObjects.EnterProtocolDetails();
+            AssessmentPageObjects.EnterTraumaDetails();
+            AssessmentPageObjects.EnterVehicleCollisionDetails();
+            AssessmentPageObjects.EnterPriorAidGivenDetails();
+            AssessmentPageObjects.EnterCardiacArrestDetails();
+            AssessmentPageObjects.EnterPatientComplaintDetails();
+
 
         }
     }

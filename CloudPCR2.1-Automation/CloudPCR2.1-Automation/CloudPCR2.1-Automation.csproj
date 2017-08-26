@@ -55,14 +55,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\AssessmentPageObjects.cs" />
     <Compile Include="PageObjects\CreateNewPCRPageObjects.cs" />
     <Compile Include="PageObjects\HomePageObjects.cs" />
     <Compile Include="PageObjects\LoginPageObjects.cs" />
+    <Compile Include="PageObjects\PatientHomePageObjects.cs" />
     <Compile Include="PageObjects\QAAdminPageObjects.cs" />
     <Compile Include="TestCases\CloudPCRTestCases.cs" />
     <Compile Include="TestCases\DriverScenarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CommonMethods.cs" />
     <Compile Include="Utilities\GlobalVariables.cs" />
+    <Compile Include="Utilities\PCRVariables.cs" />
     <Compile Include="Utilities\SelectingBrowsers.cs" />
   </ItemGroup>
   <ItemGroup>

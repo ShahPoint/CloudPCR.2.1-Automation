@@ -29,5 +29,15 @@ namespace CloudPCR2._1_Automation.Utilities
             get;
             set;
         }
+
+       public static string ReturnSelectObject(string value)
+        {
+            return "select[originalngmodel='" + value + "']";
+        }
+
+        public static string ReturnInputObject(string value)
+        {
+            return "input[originalngmodel='" + value + "']";
+        }
     }
 }

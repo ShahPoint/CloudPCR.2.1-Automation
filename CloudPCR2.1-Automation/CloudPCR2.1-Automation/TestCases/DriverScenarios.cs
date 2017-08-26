@@ -24,5 +24,12 @@ namespace CloudPCR2._1_Automation.TestCases
         {
             driver.Close();
         }
+
+        public PCRVariables SeedData(PCRVariables pcr)
+        {
+            pcr.IncidentNumber = "1234";
+            pcr.DispositionOutcome = "Cancelled";
+            return pcr;
+        }
     }
 }
