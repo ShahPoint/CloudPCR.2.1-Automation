@@ -11,7 +11,7 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
    public class PatientHomePageObjects : SelectingBrowsers
     {
-        //patient info
+        #region  patient info
         static By firstNameTextbox = By.CssSelector(ReturnInputObject("e06_02"));
         static By lastNameTextbox = By.CssSelector(ReturnInputObject("e06_01"));
         static By miTextbox = By.CssSelector(ReturnInputObject("e06_03"));
@@ -21,9 +21,10 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By dobTextbox   = By.CssSelector(ReturnInputObject("e06_16_Date"));
         static By etnicityDropdown = By.CssSelector(ReturnSelectObject("e06_13"));
         static By genderDropdown = By.CssSelector(ReturnSelectObject("e06_11"));
-        static By ssnTextbox = By.CssSelector(ReturnInputObject("e06_10"));      
+        static By ssnTextbox = By.CssSelector(ReturnInputObject("e06_10"));
+        #endregion
 
-        //patient address
+        #region  patient address
         static By patientAddressTextarea = By.Id("patientAddressTextArea");
         static By googleLocSearchTextbox = By.CssSelector(ReturnInputObject("patientAddress.geocomplete"));
         static By streetAddressTextbox = By.CssSelector(ReturnInputObject("patientAddress.street"));
@@ -34,15 +35,16 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By municipalityPickerDropdown = By.CssSelector(ReturnSelectObject("patientAddress.fipsPicker"));
         static By municipalCodeTextbox = By.CssSelector(ReturnInputObject("patientAddress.municipalityCode"));
         static By countryCodeTextbox = By.CssSelector(ReturnInputObject("patientAddress.countyCode"));
-        static By additionalNotesTextbox = By.CssSelector(ReturnInputObject("patientAddress.notes"));       
+        static By additionalNotesTextbox = By.CssSelector(ReturnInputObject("patientAddress.notes"));
+        #endregion
 
-        //personal
+        #region personal
         static By dlNumberTextbox = By.CssSelector(ReturnInputObject("e06_19"));
         static By ptPractionerNameTextbox = By.CssSelector(ReturnInputObject("e12_06"));
         static By dlStateDropdown = By.CssSelector(ReturnSelectObject("e06_18"));
-              
+        #endregion
 
-        //medical Info
+        #region  medical Info
         static By historyDropdown = By.CssSelector(ReturnSelectObject("e12_10"));
         static By historyObtainedDropdown = By.CssSelector(ReturnSelectObject("e12_11"));
         static By allergiesMedsDropdown = By.CssSelector(ReturnSelectObject("e12_08"));
@@ -55,15 +57,18 @@ namespace CloudPCR2._1_Automation.PageObjects
 
         static By newButtons = By.CssSelector("a[data-toggle='modal']");
         static By saveButtons = By.CssSelector("button.btn.btn-default");
+        #endregion
 
-        //patient medication 
+        #region  patient medication 
         static By routeDropdown = By.CssSelector(ReturnSelectObject("forms.patientMedications.e12_17"));
         static By dosageTextbox = By.CssSelector(ReturnInputObject("forms.patientMedications.e12_15"));
         static By unitsDropdown = By.CssSelector(ReturnSelectObject("forms.patientMedications.e12_16"));
-    
-        //immunization     
+        #endregion
+
+        #region  immunization
         static By typeDropdown = By.CssSelector(ReturnSelectObject("forms.immunizations.e12_12"));
         static By yearTextbox = By.CssSelector(ReturnInputObject("forms.immunizations.e12_13"));
+        #endregion
 
         public static void EnterPatientInfoDetails()
         {
@@ -93,6 +98,7 @@ namespace CloudPCR2._1_Automation.PageObjects
             countryCodeTextbox.EnterText("001");
             additionalNotesTextbox.EnterText("testing");
             saveButtons.ClickOnSpecificNumber(0);
+            Thread.Sleep(2000);
         }
 
         public static void EnterPersonalDetails()

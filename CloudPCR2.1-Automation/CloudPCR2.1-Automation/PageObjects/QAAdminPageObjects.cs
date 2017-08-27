@@ -12,11 +12,13 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
     class QAAdminPageObjects : SelectingBrowsers
     {
+        #region 
         static By incidentTextbox = By.CssSelector("td[aria-label='Column Incident Number, Filter cell'] input.dx-texteditor-input");
         static By actionsButton = By.CssSelector("#actionsTemplate button");
         static By deleteButtonInPopup = By.CssSelector("button[id='delete']");
         static By yesButton = By.CssSelector("div[aria-label='Yes'] div");
         static By firstIncidentValue = By.CssSelector("div.dx-scrollable-content > div > table > tbody > tr:nth-child(1) > td:nth-child(3)");
+        #endregion
 
         public static void EnterTextInIncidentTextbox(string incidentText)
         {

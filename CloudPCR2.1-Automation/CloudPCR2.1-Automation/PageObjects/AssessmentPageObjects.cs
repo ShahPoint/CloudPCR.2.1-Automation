@@ -11,11 +11,12 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
     public class AssessmentPageObjects : SelectingBrowsers
     {
-        //patient complaints
+        #region  patient complaints
         static By chiefComplaintTextbox = By.CssSelector(ReturnInputObject("e09_05"));
         static By possibleInjuryDropdown = By.CssSelector(ReturnSelectObject("e09_04"));
-     
-        //Impression
+        #endregion
+
+        #region Impression
         static By complaintLocationDropdown = By.CssSelector(ReturnSelectObject("e09_11"));
         static By organSystemDropdown = By.CssSelector(ReturnSelectObject("e09_12"));
         static By primarySymptomsDropdown = By.CssSelector(ReturnSelectObject("e09_13"));
@@ -25,8 +26,10 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By drugsAlcoholDropdown = By.CssSelector(ReturnSelectObject("e12_19"));
 
         static By protocolsDropdown = By.CssSelector(ReturnSelectObject("e17_01"));
-         
-        //vehicle collision
+
+        #endregion
+
+        #region vehicle collision
         static By vehicleCollisionDropdown = By.CssSelector(ReturnSelectObject("e10_05"));
         static By reportNumberTextbox = By.CssSelector(ReturnInputObject("e22_03"));
         static By ptLocationDropdown = By.CssSelector(ReturnSelectObject("e10_07"));
@@ -36,18 +39,21 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By injuryIndicatorsDropdown = By.CssSelector(ReturnSelectObject("e10_04"));
 
         static By checkboxValue = By.CssSelector("div.tools input");
+        #endregion
 
-        //trauma
+        #region  Trauma
         static By heightOfFallTextbox = By.CssSelector(ReturnInputObject("e10_10"));
         static By causeOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_01"));
-        static By intentOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_02"));      
+        static By intentOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_02"));
+        #endregion
 
-        //prior aid given
+        #region prior aid given
         static By priorAidDropdown = By.CssSelector(ReturnSelectObject("e09_01"));
         static By treatedByDropdown = By.CssSelector(ReturnSelectObject("e09_02"));
         static By aidOutcomeDropdown = By.CssSelector(ReturnSelectObject("e09_03"));
+        #endregion
 
-        //cardiac arrest
+        #region cardiac arrest
         static By cardiacArrestDropdown = By.CssSelector(ReturnSelectObject("e11_01"));
         static By cardiacArrestTimeDropdown = By.CssSelector(ReturnSelectObject("e11_08"));
         static By etiologyDropdown = By.CssSelector(ReturnSelectObject("e11_02"));
@@ -58,7 +64,7 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By discontinueReasonDropdown = By.CssSelector(ReturnSelectObject("e11_10"));
         static By discontinueTimeTextbox = By.CssSelector(ReturnInputObject("e11_09_Time"));
         static By discontinueDateTextbox = By.CssSelector(ReturnInputObject("e11_09_Date"));
-
+        #endregion
 
         public static void EnterPatientComplaintDetails()
         {

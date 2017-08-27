@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CloudPCR2._1_Automation.TestCases
@@ -79,8 +80,45 @@ namespace CloudPCR2._1_Automation.TestCases
             AssessmentPageObjects.EnterCardiacArrestDetails();
             AssessmentPageObjects.EnterPatientComplaintDetails();
 
+            HomePageObjects.ClickSideIconLink("Billing");
+            BillingPageObjects.EnterEmployerDetails();
+            BillingPageObjects.EnterGuardianDetails();
+            BillingPageObjects.EnterInsuranceDetails();
+            BillingPageObjects.EnterBillingDetails();
 
+            HomePageObjects.ClickSideIconLink("Timeline");
+            TimelinePageObjects.EnterVitalDetails();
+            TimelinePageObjects.EnterMedicationDetails();
+            TimelinePageObjects.EnterProcedureDetails();
+            TimelinePageObjects.EnterExamDetails();
+            TimelinePageObjects.EnterHeadNeckDetails();
+            TimelinePageObjects.EnterChestAbsDetails();
+            TimelinePageObjects.EnterExtremitiesDetails();
+            TimelinePageObjects.EnterBackDetails();
+            TimelinePageObjects.EnterNotesDetails();
+
+            HomePageObjects.ClickSideIconLink("Outcome");
+            OutcomePageObjects.EnterDestinationDetails();
+            OutcomePageObjects.EnterTransportInformationDetails();
+            OutcomePageObjects.EnterOtherReportInfoDetails();
+
+            HomePageObjects.ClickSideIconLink("Narrative");
+            NarrativePageObjects.EnterOtherFieldsDetails();
+
+            HomePageObjects.ClickSideIconLink("Attachments/Forms");
+            AttachmentsFormsPageObjects.EnterAttachmentDetails();
+            Thread.Sleep(10000);
+
+            HomePageObjects.ClickSideIconLink("Signatures");
+            SignaturesPageObjects.EnterSignatureDetails();
+            Thread.Sleep(10000);
+
+            HomePageObjects.ClickSideIconLink("Notes");
+            NotesPageObjects.EnterNotesDetails();
+
+            CreateNewPCRPageObjects.ClickSaveButtonFromOptionsDropdown();
+            CreateNewPCRPageObjects.VerifyPCRSyncMessageDisplay();
         }
     }
-    
+
 }

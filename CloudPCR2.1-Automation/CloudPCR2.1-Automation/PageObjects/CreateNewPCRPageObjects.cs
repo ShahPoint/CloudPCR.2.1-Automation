@@ -12,29 +12,32 @@ using System.Threading.Tasks;
 namespace CloudPCR2._1_Automation.PageObjects
 {
     public class CreateNewPCRPageObjects : SelectingBrowsers
-    {      
+    {
 
-
+        #region
         static By dispositionDropdown = By.CssSelector(ReturnSelectObject("e20_10"));
         static By optionsDropdown = By.CssSelector("div.top-menu a.dropdown-toggle");
         static By saveLinkInsideOptionsDropdown = By.CssSelector("li.dropdown.open > ul > li:nth-child(2) > a");
         static By pcrSyncMessage = By.Id("toast-container");
         static By backButton = By.Id("undefined");
+        #endregion
 
-        //locations
+        #region  locations
         static By emdPerformedDropdown = By.CssSelector(ReturnSelectObject("e03_02"));
         static By emdCardNoTextbox = By.CssSelector(ReturnInputObject("e03_03"));
         static By locationZoneDropdown = By.CssSelector(ReturnSelectObject("e08_09"));
         static By locationFacilityCodeDropdown = By.CssSelector(ReturnSelectObject("e08_08"));
+        #endregion
 
-        //incident
+        #region incident
         static By incidentNumberTextbox = By.CssSelector(ReturnInputObject("e02_02"));
         static By responseUrgencyDropdown = By.CssSelector(ReturnSelectObject("e07_33"));
         static By cmsLevelDropdown = By.CssSelector(ReturnSelectObject("e07_34"));
         static By typeOfLocationDropdown = By.CssSelector(ReturnSelectObject("e08_07"));
         static By natureOfIncidentDropdown = By.CssSelector(ReturnSelectObject("e03_01"));
+        #endregion
 
-        //scene address textarea
+        #region scene address textarea
         static By sceneAddressTextarea = By.Id("sceneAddressTextArea");
         static By googleLocSearchTextbox = By.CssSelector(ReturnInputObject("sceneAddress.geocomplete"));
         static By streetAddressTextbox = By.CssSelector(ReturnInputObject("sceneAddress.street"));
@@ -47,16 +50,18 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By countryCodeTextbox = By.CssSelector(ReturnInputObject("sceneAddress.countyCode"));
         static By additionalNotesTextbox = By.CssSelector(ReturnInputObject("sceneAddress.notes"));
         static By closeButton = By.CssSelector("button.btn.btn-default");
+        #endregion
 
-        //Dispatch
+        #region  Dispatch
         static By callSignDropdown = By.CssSelector(ReturnSelectObject("e02_12"));
         static By vehicleNumberDropdown = By.CssSelector(ReturnSelectObject("e02_11"));
         static By modeToSceneDropdown = By.CssSelector(ReturnSelectObject("e02_20"));
         static By vehicleIncidentNumTextbox = By.CssSelector(ReturnInputObject("e02_03"));
         static By serviceRequestedDropdown = By.CssSelector(ReturnSelectObject("e02_04"));
         static By roleDropdown = By.CssSelector(ReturnSelectObject("e02_05"));
-
-        //Times
+        #endregion
+        
+        #region Times
         static By onsetTextbox = By.CssSelector(ReturnInputObject("e05_01_Time"));
         static By receivedTextbox = By.CssSelector(ReturnInputObject("e05_02_Time"));
         static By notifiedTextbox = By.CssSelector(ReturnInputObject("e05_03_Time"));
@@ -66,8 +71,9 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By availableTextbox = By.CssSelector(ReturnInputObject("e05_11_Time"));
         static By atBaseTextbox = By.CssSelector(ReturnInputObject("e05_13_Time"));
         static By cancelledTextbox = By.CssSelector(ReturnInputObject("e05_12_Time"));
+        #endregion
 
-        //Crew
+        #region  Crew
         static By crewNewButton = By.CssSelector("a[data-toggle='modal']");
         static By nameCrewTextbox = By.CssSelector(ReturnInputObject("forms.crew.name"));
         static By crewQuickSelectDropdown = By.CssSelector("select[id='CrewSelect']");
@@ -75,15 +81,17 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By roleCrewDropdown = By.CssSelector(ReturnSelectObject("forms.crew.e04_02"));
         static By certLevelDropdown = By.CssSelector(ReturnSelectObject("forms.crew.e04_03"));
         static By crewSaveButton = By.CssSelector("button.btn.btn-default");
+        #endregion
 
-        //Mileage
+        #region  Mileage
         static By startTextbox = By.CssSelector(ReturnInputObject("e02_16"));
         static By sceneTextbox = By.CssSelector(ReturnInputObject("e02_17"));
         static By serviceTextbox = By.CssSelector(ReturnInputObject("e02_19"));
 
         static By checkboxValue = By.CssSelector("div.tools input");
+        #endregion
 
-        //Delays
+        #region  Delays
 
 
         static By dispatchDelaysTextbox = By.CssSelector(ReturnSelectObject("e02_06"));
@@ -91,16 +99,17 @@ namespace CloudPCR2._1_Automation.PageObjects
         static By sceneDelaysTextbox = By.CssSelector(ReturnSelectObject("e02_08"));
         static By transportTextbox = By.CssSelector(ReturnSelectObject("e02_09"));
         static By turnAroundTextbox = By.CssSelector(ReturnSelectObject("e02_10"));
+        #endregion
 
-        //Others on Scene 
+        #region  Others on Scene 
         static By serviceOnSceneTextbox = By.CssSelector(ReturnSelectObject("e08_02"));
         static By otherEMSAgenciesTextbox = By.CssSelector(ReturnSelectObject("e08_01"));
         static By emsSystemTextbox = By.CssSelector(ReturnInputObject("d04_17"));
         static By responseDifferntialDropdown = By.CssSelector(ReturnSelectObject("e08_03"));
+        #endregion
 
-
-        //Actions
-
+        #region  Actions
+        #endregion
 
         public static void SelectValueInDispositionDropdown(string value)
         {
@@ -144,7 +153,7 @@ namespace CloudPCR2._1_Automation.PageObjects
 
         public static void EnterIncidentDetails(PCRVariables pcr)
         {
-            incidentNumberTextbox.EnterText();
+            incidentNumberTextbox.EnterText(pcr.IncidentNumber);
             responseUrgencyDropdown.SelectValueInDropdown("Not Applicable");
             typeOfLocationDropdown.SelectValueInDropdown("Not Applicable");
             natureOfIncidentDropdown.SelectValueInDropdown("Not Applicable");

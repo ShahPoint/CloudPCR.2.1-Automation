@@ -12,10 +12,12 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
     public class HomePageObjects : SelectingBrowsers
     {
+        #region 
         static By userNameSpanText = By.Id("HeaderCurrentUserName");
         static By createPCRButton = By.CssSelector("button.btn.btn-primary.blue");
         static By qaPCRLink = By.CssSelector("div > ul > li:nth-child(2) > ul > li:nth-child(1) > a > span");
         static By sidePanelIcons = By.CssSelector("ul.page-sidebar-menu a");
+        #endregion
 
         public static void VerifyHomePageDisplayed(string userName)
         {
