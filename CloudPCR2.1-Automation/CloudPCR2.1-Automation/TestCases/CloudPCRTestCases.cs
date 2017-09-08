@@ -28,11 +28,12 @@ namespace CloudPCR2._1_Automation.TestCases
             LoginPageObjects.ClickStartDemoButton();
             HomePageObjects.VerifyHomePageDisplayed(GlobalVariables.userName);
             HomePageObjects.ClickCreatePCRButton();
-            CreateNewPCRPageObjects.SelectValueInDispositionDropdown("Cancelled");
-            CreateNewPCRPageObjects.EnterIncidentNum(randomName);
-            CreateNewPCRPageObjects.ClickSaveButtonFromOptionsDropdown();
-            CreateNewPCRPageObjects.VerifyPCRSyncMessageDisplay();
-            CreateNewPCRPageObjects.ClickBackButton();
+            CreateNewPCRPageObjects createNewPCR = new CreateNewPCRPageObjects(pcr);
+            createNewPCR.SelectValueInDispositionDropdown("Cancelled");
+            createNewPCR.EnterIncidentNum(randomName);
+            createNewPCR.ClickSaveButtonFromOptionsDropdown();
+            createNewPCR.VerifyPCRSyncMessageDisplay();
+            createNewPCR.ClickBackButton();
             HomePageObjects.ClickQAPcr();
             QAAdminPageObjects.EnterTextInIncidentTextbox(randomName);
             QAAdminPageObjects.ClickOnActionsButton();
@@ -51,62 +52,69 @@ namespace CloudPCR2._1_Automation.TestCases
             LoginPageObjects.ClickStartDemoButton();
             HomePageObjects.VerifyHomePageDisplayed(GlobalVariables.userName);
             HomePageObjects.ClickCreatePCRButton();
-            CreateNewPCRPageObjects.EnterIncidentDetails(pcr);
-            CreateNewPCRPageObjects.EnterSceneAddressDetails();
-            CreateNewPCRPageObjects.EnterCrewDetails();
-            CreateNewPCRPageObjects.EnterLocationDetails();
-            CreateNewPCRPageObjects.EnterDispatchDetails();
-            CreateNewPCRPageObjects.EnterMileageDetails();
-            CreateNewPCRPageObjects.EnterTimesDetails();
-            CreateNewPCRPageObjects.EnterDelaysDetails();
-            CreateNewPCRPageObjects.EnterOthersOnSceneDetails();
-            CreateNewPCRPageObjects.SelectValueInDispositionDropdown("Cancelled");
+            CreateNewPCRPageObjects createNewPCR = new CreateNewPCRPageObjects(pcr);
+            createNewPCR.EnterIncidentDetails();
+            createNewPCR.EnterSceneAddressDetails();
+            createNewPCR.EnterCrewDetails();
+            createNewPCR.EnterLocationDetails();
+            createNewPCR.EnterDispatchDetails();
+            createNewPCR.EnterMileageDetails();
+            createNewPCR.EnterTimesDetails();
+            createNewPCR.EnterDelaysDetails();
+            createNewPCR.EnterOthersOnSceneDetails();
+            createNewPCR.SelectValueInDispositionDropdown(pcr.DispositionOutcome);
 
             HomePageObjects.ClickSideIconLink("Patient");
-            PatientHomePageObjects.EnterPatientImmunizationsDetails();
-            PatientHomePageObjects.EnterPersonalDetails();
-            PatientHomePageObjects.EnterPatientMedicationsDetails();
-            PatientHomePageObjects.EnterMedicalInfoDetails();
-            PatientHomePageObjects.EnterPatientInfoDetails();
-            PatientHomePageObjects.EnterPatientAddressDetails();
+            PatientHomePageObjects patientsPage = new PatientHomePageObjects(pcr);
+            patientsPage.EnterPatientImmunizationsDetails();
+            patientsPage.EnterPersonalDetails();
+            patientsPage.EnterPatientMedicationsDetails();
+            patientsPage.EnterMedicalInfoDetails();
+            patientsPage.EnterPatientInfoDetails();
+            patientsPage.EnterPatientAddressDetails();
 
             HomePageObjects.ClickSideIconLink("Assessment");
-
-            AssessmentPageObjects.EnterImpressionDetails();
-            AssessmentPageObjects.EnterProtocolDetails();
-            AssessmentPageObjects.EnterTraumaDetails();
-            AssessmentPageObjects.EnterVehicleCollisionDetails();
-            AssessmentPageObjects.EnterPriorAidGivenDetails();
-            AssessmentPageObjects.EnterCardiacArrestDetails();
-            AssessmentPageObjects.EnterPatientComplaintDetails();
+            AssessmentPageObjects assessmentPageObjects = new AssessmentPageObjects(pcr);
+            assessmentPageObjects.EnterImpressionDetails();
+            assessmentPageObjects.EnterProtocolDetails();
+            assessmentPageObjects.EnterTraumaDetails();
+            assessmentPageObjects.EnterVehicleCollisionDetails();
+            assessmentPageObjects.EnterPriorAidGivenDetails();
+            assessmentPageObjects.EnterCardiacArrestDetails();
+            assessmentPageObjects.EnterPatientComplaintDetails();
 
             HomePageObjects.ClickSideIconLink("Billing");
-            BillingPageObjects.EnterEmployerDetails();
-            BillingPageObjects.EnterGuardianDetails();
-            BillingPageObjects.EnterInsuranceDetails();
-            BillingPageObjects.EnterBillingDetails();
+            BillingPageObjects billingPageObjects = new BillingPageObjects(pcr);
+            billingPageObjects.EnterEmployerDetails();
+            billingPageObjects.EnterGuardianDetails();
+            billingPageObjects.EnterInsuranceDetails();
+            billingPageObjects.EnterBillingDetails();
 
             HomePageObjects.ClickSideIconLink("Timeline");
-            TimelinePageObjects.EnterVitalDetails();
-            TimelinePageObjects.EnterMedicationDetails();
-            TimelinePageObjects.EnterProcedureDetails();
-            TimelinePageObjects.EnterExamDetails();
-            TimelinePageObjects.EnterHeadNeckDetails();
-            TimelinePageObjects.EnterChestAbsDetails();
-            TimelinePageObjects.EnterExtremitiesDetails();
-            TimelinePageObjects.EnterBackDetails();
-            TimelinePageObjects.EnterNotesDetails();
-
+            TimelinePageObjects timelinePageObjects = new TimelinePageObjects(pcr);
+            timelinePageObjects.EnterVitalDetails();
+            timelinePageObjects.EnterMedicationDetails();
+            timelinePageObjects.EnterProcedureDetails();
+            timelinePageObjects.EnterExamDetails();
+            timelinePageObjects.EnterHeadNeckDetails();
+            timelinePageObjects.EnterChestAbsDetails();
+            timelinePageObjects.EnterExtremitiesDetails();
+            timelinePageObjects.EnterBackDetails();
+            timelinePageObjects.EnterNotesDetails();
+            Thread.Sleep(5000);
             HomePageObjects.ClickSideIconLink("Outcome");
-            OutcomePageObjects.EnterDestinationDetails();
-            OutcomePageObjects.EnterTransportInformationDetails();
-            OutcomePageObjects.EnterOtherReportInfoDetails();
+            OutcomePageObjects outcomePageObjects = new OutcomePageObjects(pcr);
+            outcomePageObjects.EnterDestinationDetails();
+            outcomePageObjects.EnterTransportInformationDetails();
+            outcomePageObjects.EnterOtherReportInfoDetails();
 
             HomePageObjects.ClickSideIconLink("Narrative");
-            NarrativePageObjects.EnterOtherFieldsDetails();
+            NarrativePageObjects narrativePageObjects = new NarrativePageObjects(pcr);
+            narrativePageObjects.EnterOtherFieldsDetails();
 
             HomePageObjects.ClickSideIconLink("Attachments/Forms");
-            AttachmentsFormsPageObjects.EnterAttachmentDetails();
+            AttachmentsFormsPageObjects attachmentsFormsPageObjects = new AttachmentsFormsPageObjects(pcr);
+            attachmentsFormsPageObjects.EnterAttachmentDetails();
             Thread.Sleep(10000);
 
             HomePageObjects.ClickSideIconLink("Signatures");
@@ -116,8 +124,8 @@ namespace CloudPCR2._1_Automation.TestCases
             HomePageObjects.ClickSideIconLink("Notes");
             NotesPageObjects.EnterNotesDetails();
 
-            CreateNewPCRPageObjects.ClickSaveButtonFromOptionsDropdown();
-            CreateNewPCRPageObjects.VerifyPCRSyncMessageDisplay();
+            createNewPCR.ClickSaveButtonFromOptionsDropdown();
+            createNewPCR.VerifyPCRSyncMessageDisplay();
         }
     }
 

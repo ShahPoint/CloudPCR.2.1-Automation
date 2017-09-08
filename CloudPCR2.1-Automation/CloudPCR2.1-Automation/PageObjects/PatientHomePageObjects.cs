@@ -11,131 +11,138 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
    public class PatientHomePageObjects : SelectingBrowsers
     {
+        PCRVariables pcrVar = new PCRVariables();
+
+        public PatientHomePageObjects(PCRVariables pcr)
+        {
+            pcrVar = pcr;
+        }
+
         #region  patient info
-        static By firstNameTextbox = By.CssSelector(ReturnInputObject("e06_02"));
-        static By lastNameTextbox = By.CssSelector(ReturnInputObject("e06_01"));
-        static By miTextbox = By.CssSelector(ReturnInputObject("e06_03"));
-        static By phoneTextbox = By.CssSelector(ReturnInputObject("e06_17"));
-        static By weightTextbox = By.CssSelector(ReturnInputObject("e16_01"));
-        static By raceDropdown = By.CssSelector(ReturnSelectObject("e06_12"));
-        static By dobTextbox   = By.CssSelector(ReturnInputObject("e06_16_Date"));
-        static By etnicityDropdown = By.CssSelector(ReturnSelectObject("e06_13"));
-        static By genderDropdown = By.CssSelector(ReturnSelectObject("e06_11"));
-        static By ssnTextbox = By.CssSelector(ReturnInputObject("e06_10"));
+       By firstNameTextbox = By.CssSelector(ReturnInputObject("e06_02"));
+       By lastNameTextbox = By.CssSelector(ReturnInputObject("e06_01"));
+       By miTextbox = By.CssSelector(ReturnInputObject("e06_03"));
+       By phoneTextbox = By.CssSelector(ReturnInputObject("e06_17"));
+       By weightTextbox = By.CssSelector(ReturnInputObject("e16_01"));
+       By raceDropdown = By.CssSelector(ReturnSelectObject("e06_12"));
+       By dobTextbox   = By.CssSelector(ReturnInputObject("e06_16_Date"));
+       By etnicityDropdown = By.CssSelector(ReturnSelectObject("e06_13"));
+       By genderDropdown = By.CssSelector(ReturnSelectObject("e06_11"));
+       By ssnTextbox = By.CssSelector(ReturnInputObject("e06_10"));
         #endregion
 
         #region  patient address
-        static By patientAddressTextarea = By.Id("patientAddressTextArea");
-        static By googleLocSearchTextbox = By.CssSelector(ReturnInputObject("patientAddress.geocomplete"));
-        static By streetAddressTextbox = By.CssSelector(ReturnInputObject("patientAddress.street"));
-        static By streetAddress2Textbox = By.CssSelector(ReturnInputObject("patientAddress.street2"));
-        static By cityTextbox = By.CssSelector(ReturnInputObject("patientAddress.city"));
-        static By stateDropdown = By.CssSelector(ReturnSelectObject("patientAddress.state"));
-        static By zipTextbox = By.CssSelector(ReturnInputObject("patientAddress.zip"));
-        static By municipalityPickerDropdown = By.CssSelector(ReturnSelectObject("patientAddress.fipsPicker"));
-        static By municipalCodeTextbox = By.CssSelector(ReturnInputObject("patientAddress.municipalityCode"));
-        static By countryCodeTextbox = By.CssSelector(ReturnInputObject("patientAddress.countyCode"));
-        static By additionalNotesTextbox = By.CssSelector(ReturnInputObject("patientAddress.notes"));
+        By patientAddressTextarea = By.Id("patientAddressTextArea");
+        By googleLocSearchTextbox = By.CssSelector(ReturnInputObject("patientAddress.geocomplete"));
+        By streetAddressTextbox = By.CssSelector(ReturnInputObject("patientAddress.street"));
+        By streetAddress2Textbox = By.CssSelector(ReturnInputObject("patientAddress.street2"));
+        By cityTextbox = By.CssSelector(ReturnInputObject("patientAddress.city"));
+        By stateDropdown = By.CssSelector(ReturnSelectObject("patientAddress.state"));
+        By zipTextbox = By.CssSelector(ReturnInputObject("patientAddress.zip"));
+        By municipalityPickerDropdown = By.CssSelector(ReturnSelectObject("patientAddress.fipsPicker"));
+        By municipalCodeTextbox = By.CssSelector(ReturnInputObject("patientAddress.municipalityCode"));
+        By countryCodeTextbox = By.CssSelector(ReturnInputObject("patientAddress.countyCode"));
+        By additionalNotesTextbox = By.CssSelector(ReturnInputObject("patientAddress.notes"));
         #endregion
 
         #region personal
-        static By dlNumberTextbox = By.CssSelector(ReturnInputObject("e06_19"));
-        static By ptPractionerNameTextbox = By.CssSelector(ReturnInputObject("e12_06"));
-        static By dlStateDropdown = By.CssSelector(ReturnSelectObject("e06_18"));
+        By dlNumberTextbox = By.CssSelector(ReturnInputObject("e06_19"));
+        By ptPractionerNameTextbox = By.CssSelector(ReturnInputObject("e12_06"));
+        By dlStateDropdown = By.CssSelector(ReturnSelectObject("e06_18"));
         #endregion
 
         #region  medical Info
-        static By historyDropdown = By.CssSelector(ReturnSelectObject("e12_10"));
-        static By historyObtainedDropdown = By.CssSelector(ReturnSelectObject("e12_11"));
-        static By allergiesMedsDropdown = By.CssSelector(ReturnSelectObject("e12_08"));
-        static By emergencyFormDropdown = By.CssSelector(ReturnSelectObject("e12_18"));
-        static By allergiesOthersDropdown = By.CssSelector(ReturnSelectObject("e12_09"));
-        static By advancedDirectivesDropdown = By.CssSelector(ReturnSelectObject("e12_07"));
-        static By triageColorDropdown = By.CssSelector(ReturnSelectObject("customTriageColor"));
-        static By triageCategoryDropdown = By.CssSelector(ReturnSelectObject("customTriageCategory"));
-        static By pregnantDropdown = By.CssSelector(ReturnSelectObject("e12_20"));
+        By historyDropdown = By.CssSelector(ReturnSelectObject("e12_10"));
+        By historyObtainedDropdown = By.CssSelector(ReturnSelectObject("e12_11"));
+        By allergiesMedsDropdown = By.CssSelector(ReturnSelectObject("e12_08"));
+        By emergencyFormDropdown = By.CssSelector(ReturnSelectObject("e12_18"));
+        By allergiesOthersDropdown = By.CssSelector(ReturnSelectObject("e12_09"));
+        By advancedDirectivesDropdown = By.CssSelector(ReturnSelectObject("e12_07"));
+        By triageColorDropdown = By.CssSelector(ReturnSelectObject("customTriageColor"));
+        By triageCategoryDropdown = By.CssSelector(ReturnSelectObject("customTriageCategory"));
+        By pregnantDropdown = By.CssSelector(ReturnSelectObject("e12_20"));
 
-        static By newButtons = By.CssSelector("a[data-toggle='modal']");
-        static By saveButtons = By.CssSelector("button.btn.btn-default");
+        By newButtons = By.CssSelector("a[data-toggle='modal']");
+        By saveButtons = By.CssSelector("button.btn.btn-default");
         #endregion
 
         #region  patient medication 
-        static By routeDropdown = By.CssSelector(ReturnSelectObject("forms.patientMedications.e12_17"));
-        static By dosageTextbox = By.CssSelector(ReturnInputObject("forms.patientMedications.e12_15"));
-        static By unitsDropdown = By.CssSelector(ReturnSelectObject("forms.patientMedications.e12_16"));
+        By routeDropdown = By.CssSelector(ReturnSelectObject("forms.patientMedications.e12_17"));
+        By dosageTextbox = By.CssSelector(ReturnInputObject("forms.patientMedications.e12_15"));
+        By unitsDropdown = By.CssSelector(ReturnSelectObject("forms.patientMedications.e12_16"));
         #endregion
 
         #region  immunization
-        static By typeDropdown = By.CssSelector(ReturnSelectObject("forms.immunizations.e12_12"));
-        static By yearTextbox = By.CssSelector(ReturnInputObject("forms.immunizations.e12_13"));
+        By typeDropdown = By.CssSelector(ReturnSelectObject("forms.immunizations.e12_12"));
+        By yearTextbox = By.CssSelector(ReturnInputObject("forms.immunizations.e12_13"));
         #endregion
 
-        public static void EnterPatientInfoDetails()
+        public void EnterPatientInfoDetails()
         {
-            firstNameTextbox.EnterText("Testing");
-            lastNameTextbox.EnterText("Testing");
-            miTextbox.EnterText("Testing");
-            phoneTextbox.EnterText("1234569708");
-            weightTextbox.EnterText("80");
-            raceDropdown.SelectValueInDropdown("Asian");
-            dobTextbox.EnterText("12121988");
-            etnicityDropdown.EnterText("Not Known");
-            genderDropdown.EnterText("Male");
-            ssnTextbox.EnterText("1234567980");
+            firstNameTextbox.EnterText(pcrVar.PatientInfoDetailsfirstName);
+            lastNameTextbox.EnterText(pcrVar.PatientInfoDetailslastName);
+            miTextbox.EnterText(pcrVar.PatientInfoDetailsmi);
+            phoneTextbox.EnterText(pcrVar.PatientInfoDetailsphone);
+            weightTextbox.EnterText(pcrVar.PatientInfoDetailsweight);
+            raceDropdown.SelectValueInDropdown(pcrVar.PatientInfoDetailsrace);
+            dobTextbox.EnterText(pcrVar.PatientInfoDetailsdob);
+            etnicityDropdown.EnterText(pcrVar.PatientInfoDetailsetnicity);
+            genderDropdown.EnterText(pcrVar.PatientInfoDetailsgender);
+            ssnTextbox.EnterText(pcrVar.PatientInfoDetailsssn);
         }
 
-        public static void EnterPatientAddressDetails()
+        public void EnterPatientAddressDetails()
         {
             patientAddressTextarea.Click();
             Thread.Sleep(2000);
-            googleLocSearchTextbox.EnterText("testing");
-            streetAddressTextbox.EnterText("testing");
-            streetAddress2Textbox.EnterText("testing");
-            cityTextbox.EnterText("Denver");
-            stateDropdown.SelectValueInDropdown("CO");
-            zipTextbox.EnterText("12345");
-            municipalCodeTextbox.EnterText("12345");
-            countryCodeTextbox.EnterText("001");
-            additionalNotesTextbox.EnterText("testing");
+            googleLocSearchTextbox.EnterText(pcrVar.PatientAddressDetailsgoogleLocSearch);
+            streetAddressTextbox.EnterText(pcrVar.PatientAddressDetailsstreetAddress);
+            streetAddress2Textbox.EnterText(pcrVar.PatientAddressDetailsstreetAddress2);
+            cityTextbox.EnterText(pcrVar.PatientAddressDetailscity);
+            stateDropdown.SelectValueInDropdown(pcrVar.PatientAddressDetailsstate);
+            zipTextbox.EnterText(pcrVar.PatientAddressDetailszip);
+            municipalCodeTextbox.EnterText(pcrVar.PatientAddressDetailsmunicipalCode);
+            countryCodeTextbox.EnterText(pcrVar.PatientAddressDetailscountryCode);
+            additionalNotesTextbox.EnterText(pcrVar.PatientAddressDetailsadditionalNotes);
             saveButtons.ClickOnSpecificNumber(0);
             Thread.Sleep(2000);
         }
 
-        public static void EnterPersonalDetails()
+        public void EnterPersonalDetails()
         {
-            dlNumberTextbox.EnterText("123456");
-            ptPractionerNameTextbox.EnterText("Tsting");
-            dlStateDropdown.SelectValueInDropdown("CO");
+            dlNumberTextbox.EnterText(pcrVar.PatientPersonalDetailsdlNumber);
+            ptPractionerNameTextbox.EnterText(pcrVar.PatientPersonalDetailsptPractionerName);
+            dlStateDropdown.SelectValueInDropdown(pcrVar.PatientPersonalDetailsdlState);
         }
 
-        public static void EnterMedicalInfoDetails()
+        public void EnterMedicalInfoDetails()
         {
-            historyDropdown.SelectValueInDropdown("Not Known");
-            historyObtainedDropdown.SelectValueInDropdown("Not Available");
-            allergiesMedsDropdown.SelectValueInDropdown("Not Available");
-            emergencyFormDropdown.SelectValueInDropdown("Not Known");
-            allergiesOthersDropdown.SelectValueInDropdown("Not Known");
-            advancedDirectivesDropdown.SelectValueInDropdown("Not Known");
-            triageColorDropdown.SelectValueInDropdown("Black");
-            triageCategoryDropdown.SelectValueInDropdown("Medical");
-            pregnantDropdown.SelectValueInDropdown("No");
+            historyDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfohistory);
+            historyObtainedDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfohistoryObtained);
+            allergiesMedsDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfoallergiesMeds);
+            emergencyFormDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfoemergencyForm);
+            allergiesOthersDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfoallergiesOthers);
+            advancedDirectivesDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfoadvancedDirectives);
+            triageColorDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfotriageColor);
+            triageCategoryDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfotriageCategory);
+            pregnantDropdown.SelectValueInDropdown(pcrVar.PatientMedicalInfopregnant);
         }
 
-        public static void EnterPatientMedicationsDetails()
+        public void EnterPatientMedicationsDetails()
         {
             newButtons.ClickOnSpecificNumber(2);
             Thread.Sleep(2000);
-            routeDropdown.SelectValueInDropdown("Not Available");
-            dosageTextbox.EnterText("12345");
-            unitsDropdown.SelectValueInDropdown("GMS");
+            routeDropdown.SelectValueInDropdown(pcrVar.PatientMedicationsroute);
+            dosageTextbox.EnterText(pcrVar.PatientMedicationsdosage);
+            unitsDropdown.SelectValueInDropdown(pcrVar.PatientMedicationsunits);
             saveButtons.ClickOnSpecificNumber(2);
         }
 
-        public static void EnterPatientImmunizationsDetails()
+        public void EnterPatientImmunizationsDetails()
         {
             newButtons.ClickOnSpecificNumber(1);
-            typeDropdown.SelectValueInDropdown("Small Pox");
-            yearTextbox.EnterText("2015");
+            typeDropdown.SelectValueInDropdown(pcrVar.PatientImmunizationstype);
+            yearTextbox.EnterText(pcrVar.PatientImmunizationsyear);
             saveButtons.ClickOnSpecificNumber(1);
         }
     }

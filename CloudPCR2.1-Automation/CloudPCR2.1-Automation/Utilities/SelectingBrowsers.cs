@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace CloudPCR2._1_Automation.Utilities
 {
     public class SelectingBrowsers
-    {
+    { 
+
         public IWebDriver OpenBrowser(string browserName, string url)
         {
             switch (browserName)

@@ -11,152 +11,159 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
    public class BillingPageObjects : SelectingBrowsers
     {
+        PCRVariables pcrVar = new PCRVariables();
+
+        public BillingPageObjects(PCRVariables pcr)
+        {
+            pcrVar = pcr;
+        }
+
         #region Billing Objects
-        static By conditionCodesDropdown = By.CssSelector(ReturnSelectObject("e07_35"));
-        static By paymentMethodDropdown = By.CssSelector(ReturnSelectObject("e07_01"));
-        static By necessityCertificateDropdown = By.CssSelector(ReturnSelectObject("e07_02"));
-        static By patientEmailTextbox = By.CssSelector(ReturnInputObject("patientEmail"));
+        By conditionCodesDropdown = By.CssSelector(ReturnSelectObject("e07_35"));
+        By paymentMethodDropdown = By.CssSelector(ReturnSelectObject("e07_01"));
+        By necessityCertificateDropdown = By.CssSelector(ReturnSelectObject("e07_02"));
+        By patientEmailTextbox = By.CssSelector(ReturnInputObject("patientEmail"));
         #endregion
 
         #region  Employer
-        static By workRelatedDropdown = By.CssSelector(ReturnSelectObject("e07_15"));
-        static By employerTextbox = By.CssSelector(ReturnInputObject("e07_27"));
-        static By employerPhoneTextbox   = By.CssSelector(ReturnInputObject("e07_32"));
-        static By patientOccupationDropdown = By.CssSelector(ReturnSelectObject("e07_17"));
-        static By occupationIndustryDropdown = By.CssSelector(ReturnSelectObject("e07_16"));
+        By workRelatedDropdown = By.CssSelector(ReturnSelectObject("e07_15"));
+        By employerTextbox = By.CssSelector(ReturnInputObject("e07_27"));
+        By employerPhoneTextbox   = By.CssSelector(ReturnInputObject("e07_32"));
+        By patientOccupationDropdown = By.CssSelector(ReturnSelectObject("e07_17"));
+        By occupationIndustryDropdown = By.CssSelector(ReturnSelectObject("e07_16"));
         #endregion      
 
         #region employer address textarea
-        static By employerAddressTextarea = By.Id("employerAddressTextArea");
-        static By employergoogleLocSearchTextbox = By.CssSelector(ReturnInputObject("employerAddress.geocomplete"));
-        static By employerstreetAddressTextbox = By.CssSelector(ReturnInputObject("employerAddress.street"));
-        static By employerstreetAddress2Textbox = By.CssSelector(ReturnInputObject("employerAddress.street2"));
-        static By employercityTextbox = By.CssSelector(ReturnInputObject("employerAddress.city"));
-        static By employerstateDropdown = By.CssSelector(ReturnSelectObject("employerAddress.state"));
-        static By employerzipTextbox = By.CssSelector(ReturnInputObject("employerAddress.zip"));
-        static By employermunicipalityPickerDropdown = By.CssSelector(ReturnSelectObject("employerAddress.fipsPicker"));
-        static By employermunicipalCodeTextbox = By.CssSelector(ReturnInputObject("employerAddress.municipalityCode"));
-        static By employercountryCodeTextbox = By.CssSelector(ReturnInputObject("employerAddress.countyCode"));
-        static By employeradditionalNotesTextbox = By.CssSelector(ReturnInputObject("employerAddress.notes"));
+        By employerAddressTextarea = By.Id("employerAddressTextArea");
+        By employergoogleLocSearchTextbox = By.CssSelector(ReturnInputObject("employerAddress.geocomplete"));
+        By employerstreetAddressTextbox = By.CssSelector(ReturnInputObject("employerAddress.street"));
+        By employerstreetAddress2Textbox = By.CssSelector(ReturnInputObject("employerAddress.street2"));
+        By employercityTextbox = By.CssSelector(ReturnInputObject("employerAddress.city"));
+        By employerstateDropdown = By.CssSelector(ReturnSelectObject("employerAddress.state"));
+        By employerzipTextbox = By.CssSelector(ReturnInputObject("employerAddress.zip"));
+        By employermunicipalityPickerDropdown = By.CssSelector(ReturnSelectObject("employerAddress.fipsPicker"));
+        By employermunicipalCodeTextbox = By.CssSelector(ReturnInputObject("employerAddress.municipalityCode"));
+        By employercountryCodeTextbox = By.CssSelector(ReturnInputObject("employerAddress.countyCode"));
+        By employeradditionalNotesTextbox = By.CssSelector(ReturnInputObject("employerAddress.notes"));
         #endregion
 
         #region Guardian/Patient
-        static By checkboxValue = By.CssSelector("div.tools input");
-        static By lastNameTextbox = By.CssSelector(ReturnInputObject("e07_18"));
-        static By firstNameTextbox = By.CssSelector(ReturnInputObject("e07_19"));
-        static By miTextbox = By.CssSelector(ReturnInputObject("e07_20"));
-        static By phoneTextbox = By.CssSelector(ReturnInputObject("e07_25"));
-        static By relationshipDropdown = By.CssSelector(ReturnSelectObject("e07_26"));
-        static By guardianAddressTextarea = By.Id(("guardianAddressTextArea"));
+        By checkboxValue = By.CssSelector("div.tools input");
+        By lastNameTextbox = By.CssSelector(ReturnInputObject("e07_18"));
+        By firstNameTextbox = By.CssSelector(ReturnInputObject("e07_19"));
+        By miTextbox = By.CssSelector(ReturnInputObject("e07_20"));
+        By phoneTextbox = By.CssSelector(ReturnInputObject("e07_25"));
+        By relationshipDropdown = By.CssSelector(ReturnSelectObject("e07_26"));
+        By guardianAddressTextarea = By.Id(("guardianAddressTextArea"));
         #endregion
 
         #region  Guardian Textarea
-        static By guardiangoogleLocSearchTextbox = By.CssSelector(ReturnInputObject("guardianAddress.geocomplete"));
-        static By guardianstreetAddressTextbox = By.CssSelector(ReturnInputObject("guardianAddress.street"));
-        static By guardianstreetAddress2Textbox = By.CssSelector(ReturnInputObject("guardianAddress.street2"));
-        static By guardiancityTextbox = By.CssSelector(ReturnInputObject("guardianAddress.city"));
-        static By guardianstateDropdown = By.CssSelector(ReturnSelectObject("guardianAddress.state"));
-        static By guardianzipTextbox = By.CssSelector(ReturnInputObject("guardianAddress.zip"));
-        static By guardianmunicipalityPickerDropdown = By.CssSelector(ReturnSelectObject("guardianAddress.fipsPicker"));
-        static By guardianmunicipalCodeTextbox = By.CssSelector(ReturnInputObject("guardianAddress.municipalityCode"));
-        static By guardiancountryCodeTextbox = By.CssSelector(ReturnInputObject("guardianAddress.countyCode"));
-        static By guardianadditionalNotesTextbox = By.CssSelector(ReturnInputObject("guardianAddress.notes"));
+        By guardiangoogleLocSearchTextbox = By.CssSelector(ReturnInputObject("guardianAddress.geocomplete"));
+        By guardianstreetAddressTextbox = By.CssSelector(ReturnInputObject("guardianAddress.street"));
+        By guardianstreetAddress2Textbox = By.CssSelector(ReturnInputObject("guardianAddress.street2"));
+        By guardiancityTextbox = By.CssSelector(ReturnInputObject("guardianAddress.city"));
+        By guardianstateDropdown = By.CssSelector(ReturnSelectObject("guardianAddress.state"));
+        By guardianzipTextbox = By.CssSelector(ReturnInputObject("guardianAddress.zip"));
+        By guardianmunicipalityPickerDropdown = By.CssSelector(ReturnSelectObject("guardianAddress.fipsPicker"));
+        By guardianmunicipalCodeTextbox = By.CssSelector(ReturnInputObject("guardianAddress.municipalityCode"));
+        By guardiancountryCodeTextbox = By.CssSelector(ReturnInputObject("guardianAddress.countyCode"));
+        By guardianadditionalNotesTextbox = By.CssSelector(ReturnInputObject("guardianAddress.notes"));
         #endregion
 
         #region  Insurance New 
-        static By newButtons = By.CssSelector("a[data-toggle='modal']");
-        static By insuranceTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_03"));
-        static By billingPriorityDropdown = By.CssSelector(ReturnSelectObject("forms.insurances.e07_04"));
-        static By groupTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_09"));
-        static By policyTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_10"));
-        static By primaryLastNameTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_11"));
-        static By primaryFirstNameTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_12"));
-        static By primarymiddleNameTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_13"));
-        static By relationshipToPatientDropdown = By.CssSelector(ReturnSelectObject("forms.insurances.e07_14"));
-        static By streetTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_05"));
-        static By cityTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_06"));
-        static By stateDropdown = By.CssSelector(ReturnSelectObject("forms.insurances.e07_07"));
-        static By zipTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_08"));
+        By newButtons = By.CssSelector("a[data-toggle='modal']");
+        By insuranceTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_03"));
+        By billingPriorityDropdown = By.CssSelector(ReturnSelectObject("forms.insurances.e07_04"));
+        By groupTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_09"));
+        By policyTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_10"));
+        By primaryLastNameTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_11"));
+        By primaryFirstNameTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_12"));
+        By primarymiddleNameTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_13"));
+        By relationshipToPatientDropdown = By.CssSelector(ReturnSelectObject("forms.insurances.e07_14"));
+        By streetTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_05"));
+        By cityTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_06"));
+        By stateDropdown = By.CssSelector(ReturnSelectObject("forms.insurances.e07_07"));
+        By zipTextbox = By.CssSelector(ReturnInputObject("forms.insurances.e07_08"));
         #endregion
 
         static By closeButton = By.CssSelector("button.btn.btn-default");
 
-        public static void EnterEmployerDetails()
+        public void EnterEmployerDetails()
         {
-            workRelatedDropdown.SelectValueInDropdown("Not Applicable");
-            employerTextbox.EnterText("abc");
+            workRelatedDropdown.SelectValueInDropdown(pcrVar.BillingEmployerworkRelated);
+            employerTextbox.EnterText(pcrVar.BillingEmployeremployer);
             //address 
             employerAddressTextarea.Click();
             Thread.Sleep(2000);
-            employergoogleLocSearchTextbox.EnterText("Colorado, United States");
-            employerstreetAddressTextbox.EnterText("test");
-            employerstreetAddress2Textbox.EnterText("test2");
-            employercityTextbox.EnterText("test");
-            employerstateDropdown.SelectValueInDropdown("AK");
-            employerzipTextbox.EnterText("3213");
-          //  employermunicipalityPickerDropdown.SelectValueInDropdown("test");
-            employermunicipalCodeTextbox.EnterText("test");
-            employercountryCodeTextbox.EnterText("test");
-            employeradditionalNotesTextbox.EnterText("test");
-            employeradditionalNotesTextbox.EnterText("test");
-            employerPhoneTextbox.EnterText("2312321323");
-            patientOccupationDropdown.SelectValueInDropdown("Not Applicable");
-            occupationIndustryDropdown.SelectValueInDropdown("Not Applicable");
+            employergoogleLocSearchTextbox.EnterText(pcrVar.BillingEmployergoogleLocSearch);
+            employerstreetAddressTextbox.EnterText(pcrVar.BillingEmployerstreetAddress);
+            employerstreetAddress2Textbox.EnterText(pcrVar.BillingEmployerstreetAddress2);
+            employercityTextbox.EnterText(pcrVar.BillingEmployercity);
+            employerstateDropdown.SelectValueInDropdown(pcrVar.BillingEmployerstate);
+            employerzipTextbox.EnterText(pcrVar.BillingEmployerzip);
+          //employermunicipalityPickerDropdown.SelectValueInDropdown("test");
+            employermunicipalCodeTextbox.EnterText(pcrVar.BillingEmployermunicipalCode);
+            employercountryCodeTextbox.EnterText(pcrVar.BillingEmployercountryCode);
+            employeradditionalNotesTextbox.EnterText(pcrVar.BillingEmployeradditionalNotes);
+            employeradditionalNotesTextbox.EnterText(pcrVar.BillingEmployeradditionalNotes);
+            employerPhoneTextbox.EnterText(pcrVar.BillingEmployerPhone);
+            patientOccupationDropdown.SelectValueInDropdown(pcrVar.BillingEmployerpatientOccupation);
+            occupationIndustryDropdown.SelectValueInDropdown(pcrVar.BillingEmployeroccupationIndustry);
             closeButton.Click();
             Thread.Sleep(2000);
         }
 
-        public static void EnterGuardianDetails()
+        public  void EnterGuardianDetails()
         {
             checkboxValue.Click();
             Thread.Sleep(2000);
-            lastNameTextbox.EnterText("abc");
-            firstNameTextbox.EnterText("abc");
-            miTextbox.EnterText("wera");
-            phoneTextbox.EnterText("324234234");
-            relationshipDropdown.SelectValueInDropdown("Not Applicable");
+            lastNameTextbox.EnterText(pcrVar.BillingGuardianlastName);
+            firstNameTextbox.EnterText(pcrVar.BillingGuardianfirstName);
+            miTextbox.EnterText(pcrVar.BillingGuardianmi);
+            phoneTextbox.EnterText(pcrVar.BillingGuardianphone);
+            relationshipDropdown.SelectValueInDropdown(pcrVar.BillingGuardianrelationship);
             //address 
             guardianAddressTextarea.Click();
-            guardiangoogleLocSearchTextbox.EnterText("Colorado, United States");
-            guardianstreetAddressTextbox.EnterText("test");
-            guardianstreetAddress2Textbox.EnterText("test2");
-            guardiancityTextbox.EnterText("test");
-            guardianstateDropdown.SelectValueInDropdown("AK");
-            guardianzipTextbox.EnterText("3213");
+            guardiangoogleLocSearchTextbox.EnterText(pcrVar.BillingGuardiangoogleLocSearch);
+            guardianstreetAddressTextbox.EnterText(pcrVar.BillingGuardianstreetAddress);
+            guardianstreetAddress2Textbox.EnterText(pcrVar.BillingGuardianstreetAddress2);
+            guardiancityTextbox.EnterText(pcrVar.BillingGuardiancity);
+            guardianstateDropdown.SelectValueInDropdown(pcrVar.BillingGuardianstate);
+            guardianzipTextbox.EnterText(pcrVar.BillingGuardianzip);
            // guardianmunicipalityPickerDropdown.SelectValueInDropdown("test");
-            guardianmunicipalCodeTextbox.EnterText("test");
-            guardiancountryCodeTextbox.EnterText("test");
-            guardianadditionalNotesTextbox.EnterText("test");
+            guardianmunicipalCodeTextbox.EnterText(pcrVar.BillingGuardianmunicipalCode);
+            guardiancountryCodeTextbox.EnterText(pcrVar.BillingGuardiancountryCode);
+            guardianadditionalNotesTextbox.EnterText(pcrVar.BillingGuardianadditionalNotes);
             closeButton.ClickOnSpecificNumber(1);
             Thread.Sleep(2000);
         }
 
-        public static void EnterInsuranceDetails()
+        public  void EnterInsuranceDetails()
         {
             newButtons.ClickOnSpecificNumber(2);
             Thread.Sleep(2000);
-            insuranceTextbox.EnterText("abc");
-            billingPriorityDropdown.SelectValueInDropdown("Not Applicable");
-            groupTextbox.EnterText("abc");
-            policyTextbox.EnterText("Not Applicable");
-            primaryLastNameTextbox.EnterText("abc");
-            primaryFirstNameTextbox.EnterText("abc");
-            primarymiddleNameTextbox.EnterText("abc");
-            relationshipToPatientDropdown.SelectValueInDropdown("Not Applicable");
-            streetTextbox.EnterText("abc");
-            cityTextbox.EnterText("abc");
-            stateDropdown.SelectValueInDropdown("Not Applicable");
-            zipTextbox.EnterText("234234");
+            insuranceTextbox.EnterText(pcrVar.BillingInsurance);
+            billingPriorityDropdown.SelectValueInDropdown(pcrVar.BillingInsurancebillingPriority);
+            groupTextbox.EnterText(pcrVar.BillingInsurancegroup);
+            policyTextbox.EnterText(pcrVar.BillingInsurancepolicy);
+            primaryLastNameTextbox.EnterText(pcrVar.BillingInsuranceprimaryLastName);
+            primaryFirstNameTextbox.EnterText(pcrVar.BillingInsuranceprimaryFirstName);
+            primarymiddleNameTextbox.EnterText(pcrVar.BillingInsuranceprimarymiddleName);
+            relationshipToPatientDropdown.SelectValueInDropdown(pcrVar.BillingInsurancerelationshipToPatient);
+            streetTextbox.EnterText(pcrVar.BillingInsurancestreet);
+            cityTextbox.EnterText(pcrVar.BillingInsurancecity);
+            stateDropdown.SelectValueInDropdown(pcrVar.BillingInsurancestate);
+            zipTextbox.EnterText(pcrVar.BillingInsurancezip);
             closeButton.ClickOnSpecificNumber(2);
             Thread.Sleep(2000);
         }
 
-        public static void EnterBillingDetails()
+        public  void EnterBillingDetails()
         {
-            conditionCodesDropdown.SelectValueInDropdown("Not Applicable");
-            paymentMethodDropdown.SelectValueInDropdown("Not Applicable");
-            necessityCertificateDropdown.SelectValueInDropdown("Not Applicable");
-            patientEmailTextbox.EnterText("abc@test.com");
+            conditionCodesDropdown.SelectValueInDropdown(pcrVar.BillingDetailsconditionCodes);
+            paymentMethodDropdown.SelectValueInDropdown(pcrVar.BillingDetailspaymentMethod);
+            necessityCertificateDropdown.SelectValueInDropdown(pcrVar.BillingDetailsnecessityCertificate);
+            patientEmailTextbox.EnterText(pcrVar.BillingDetailspatientEmail);
         }
 
 

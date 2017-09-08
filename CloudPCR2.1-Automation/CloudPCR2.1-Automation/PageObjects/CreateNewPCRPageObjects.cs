@@ -13,234 +13,238 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
     public class CreateNewPCRPageObjects : SelectingBrowsers
     {
+        PCRVariables pcrVar = new PCRVariables();
+
+        public CreateNewPCRPageObjects(PCRVariables pcr)
+        {
+            pcrVar = pcr;
+        }
 
         #region
-        static By dispositionDropdown = By.CssSelector(ReturnSelectObject("e20_10"));
-        static By optionsDropdown = By.CssSelector("div.top-menu a.dropdown-toggle");
-        static By saveLinkInsideOptionsDropdown = By.CssSelector("li.dropdown.open > ul > li:nth-child(2) > a");
-        static By pcrSyncMessage = By.Id("toast-container");
-        static By backButton = By.Id("undefined");
+        By dispositionDropdown = By.CssSelector(ReturnSelectObject("e20_10"));
+         By optionsDropdown = By.CssSelector("div.top-menu a.dropdown-toggle");
+         By saveLinkInsideOptionsDropdown = By.CssSelector("li.dropdown.open > ul > li:nth-child(2) > a");
+         By pcrSyncMessage = By.Id("toast-container");
+         By backButton = By.Id("undefined");
         #endregion
 
         #region  locations
-        static By emdPerformedDropdown = By.CssSelector(ReturnSelectObject("e03_02"));
-        static By emdCardNoTextbox = By.CssSelector(ReturnInputObject("e03_03"));
-        static By locationZoneDropdown = By.CssSelector(ReturnSelectObject("e08_09"));
-        static By locationFacilityCodeDropdown = By.CssSelector(ReturnSelectObject("e08_08"));
+          By emdPerformedDropdown = By.CssSelector(ReturnSelectObject("e03_02"));
+          By emdCardNoTextbox = By.CssSelector(ReturnInputObject("e03_03"));
+          By locationZoneDropdown = By.CssSelector(ReturnSelectObject("e08_09"));
+          By locationFacilityCodeDropdown = By.CssSelector(ReturnSelectObject("e08_08"));
         #endregion
 
         #region incident
-        static By incidentNumberTextbox = By.CssSelector(ReturnInputObject("e02_02"));
-        static By responseUrgencyDropdown = By.CssSelector(ReturnSelectObject("e07_33"));
-        static By cmsLevelDropdown = By.CssSelector(ReturnSelectObject("e07_34"));
-        static By typeOfLocationDropdown = By.CssSelector(ReturnSelectObject("e08_07"));
-        static By natureOfIncidentDropdown = By.CssSelector(ReturnSelectObject("e03_01"));
+          By incidentNumberTextbox = By.CssSelector(ReturnInputObject("e02_02"));
+          By responseUrgencyDropdown = By.CssSelector(ReturnSelectObject("e07_33"));
+          By cmsLevelDropdown = By.CssSelector(ReturnSelectObject("e07_34"));
+          By typeOfLocationDropdown = By.CssSelector(ReturnSelectObject("e08_07"));
+          By natureOfIncidentDropdown = By.CssSelector(ReturnSelectObject("e03_01"));
         #endregion
 
         #region scene address textarea
-        static By sceneAddressTextarea = By.Id("sceneAddressTextArea");
-        static By googleLocSearchTextbox = By.CssSelector(ReturnInputObject("sceneAddress.geocomplete"));
-        static By streetAddressTextbox = By.CssSelector(ReturnInputObject("sceneAddress.street"));
-        static By streetAddress2Textbox = By.CssSelector(ReturnInputObject("sceneAddress.street2"));
-        static By cityTextbox = By.CssSelector(ReturnInputObject("sceneAddress.city"));
-        static By stateDropdown = By.CssSelector(ReturnSelectObject("sceneAddress.state"));
-        static By zipTextbox = By.CssSelector(ReturnInputObject("sceneAddress.zip"));
-        static By municipalityPickerDropdown = By.CssSelector(ReturnSelectObject("sceneAddress.fipsPicker"));
-        static By municipalCodeTextbox = By.CssSelector(ReturnInputObject("sceneAddress.municipalityCode"));
-        static By countryCodeTextbox = By.CssSelector(ReturnInputObject("sceneAddress.countyCode"));
-        static By additionalNotesTextbox = By.CssSelector(ReturnInputObject("sceneAddress.notes"));
-        static By closeButton = By.CssSelector("button.btn.btn-default");
+          By sceneAddressTextarea = By.Id("sceneAddressTextArea");
+          By googleLocSearchTextbox = By.CssSelector(ReturnInputObject("sceneAddress.geocomplete"));
+          By streetAddressTextbox = By.CssSelector(ReturnInputObject("sceneAddress.street"));
+          By streetAddress2Textbox = By.CssSelector(ReturnInputObject("sceneAddress.street2"));
+          By cityTextbox = By.CssSelector(ReturnInputObject("sceneAddress.city"));
+          By stateDropdown = By.CssSelector(ReturnSelectObject("sceneAddress.state"));
+          By zipTextbox = By.CssSelector(ReturnInputObject("sceneAddress.zip"));
+          By municipalityPickerDropdown = By.CssSelector(ReturnSelectObject("sceneAddress.fipsPicker"));
+          By municipalCodeTextbox = By.CssSelector(ReturnInputObject("sceneAddress.municipalityCode"));
+          By countryCodeTextbox = By.CssSelector(ReturnInputObject("sceneAddress.countyCode"));
+          By additionalNotesTextbox = By.CssSelector(ReturnInputObject("sceneAddress.notes"));
+          By closeButton = By.CssSelector("button.btn.btn-default");
         #endregion
 
         #region  Dispatch
-        static By callSignDropdown = By.CssSelector(ReturnSelectObject("e02_12"));
-        static By vehicleNumberDropdown = By.CssSelector(ReturnSelectObject("e02_11"));
-        static By modeToSceneDropdown = By.CssSelector(ReturnSelectObject("e02_20"));
-        static By vehicleIncidentNumTextbox = By.CssSelector(ReturnInputObject("e02_03"));
-        static By serviceRequestedDropdown = By.CssSelector(ReturnSelectObject("e02_04"));
-        static By roleDropdown = By.CssSelector(ReturnSelectObject("e02_05"));
+          By callSignDropdown = By.CssSelector(ReturnSelectObject("e02_12"));
+          By vehicleNumberDropdown = By.CssSelector(ReturnSelectObject("e02_11"));
+          By modeToSceneDropdown = By.CssSelector(ReturnSelectObject("e02_20"));
+          By vehicleIncidentNumTextbox = By.CssSelector(ReturnInputObject("e02_03"));
+          By serviceRequestedDropdown = By.CssSelector(ReturnSelectObject("e02_04"));
+          By roleDropdown = By.CssSelector(ReturnSelectObject("e02_05"));
         #endregion
         
         #region Times
-        static By onsetTextbox = By.CssSelector(ReturnInputObject("e05_01_Time"));
-        static By receivedTextbox = By.CssSelector(ReturnInputObject("e05_02_Time"));
-        static By notifiedTextbox = By.CssSelector(ReturnInputObject("e05_03_Time"));
-        static By dispatchTextbox = By.CssSelector(ReturnInputObject("e05_04_Time"));
-        static By enrouteTextbox = By.CssSelector(ReturnInputObject("e05_05_Time"));
-        static By arrivalTextbox = By.CssSelector(ReturnInputObject("e05_06_Time"));
-        static By availableTextbox = By.CssSelector(ReturnInputObject("e05_11_Time"));
-        static By atBaseTextbox = By.CssSelector(ReturnInputObject("e05_13_Time"));
-        static By cancelledTextbox = By.CssSelector(ReturnInputObject("e05_12_Time"));
+          By onsetTextbox = By.CssSelector(ReturnInputObject("e05_01_Time"));
+          By receivedTextbox = By.CssSelector(ReturnInputObject("e05_02_Time"));
+          By notifiedTextbox = By.CssSelector(ReturnInputObject("e05_03_Time"));
+          By dispatchTextbox = By.CssSelector(ReturnInputObject("e05_04_Time"));
+          By enrouteTextbox = By.CssSelector(ReturnInputObject("e05_05_Time"));
+          By arrivalTextbox = By.CssSelector(ReturnInputObject("e05_06_Time"));
+          By availableTextbox = By.CssSelector(ReturnInputObject("e05_11_Time"));
+          By atBaseTextbox = By.CssSelector(ReturnInputObject("e05_13_Time"));
+          By cancelledTextbox = By.CssSelector(ReturnInputObject("e05_12_Time"));
         #endregion
 
         #region  Crew
-        static By crewNewButton = By.CssSelector("a[data-toggle='modal']");
-        static By nameCrewTextbox = By.CssSelector(ReturnInputObject("forms.crew.name"));
-        static By crewQuickSelectDropdown = By.CssSelector("select[id='CrewSelect']");
-        static By stateIdTextbox = By.CssSelector(ReturnInputObject("forms.crew.e04_01"));
-        static By roleCrewDropdown = By.CssSelector(ReturnSelectObject("forms.crew.e04_02"));
-        static By certLevelDropdown = By.CssSelector(ReturnSelectObject("forms.crew.e04_03"));
-        static By crewSaveButton = By.CssSelector("button.btn.btn-default");
+          By crewNewButton = By.CssSelector("a[data-toggle='modal']");
+          By nameCrewTextbox = By.CssSelector(ReturnInputObject("forms.crew.name"));
+          By crewQuickSelectDropdown = By.CssSelector("select[id='CrewSelect']");
+          By stateIdTextbox = By.CssSelector(ReturnInputObject("forms.crew.e04_01"));
+          By roleCrewDropdown = By.CssSelector(ReturnSelectObject("forms.crew.e04_02"));
+          By certLevelDropdown = By.CssSelector(ReturnSelectObject("forms.crew.e04_03"));
+          By crewSaveButton = By.CssSelector("button.btn.btn-default");
         #endregion
 
         #region  Mileage
-        static By startTextbox = By.CssSelector(ReturnInputObject("e02_16"));
-        static By sceneTextbox = By.CssSelector(ReturnInputObject("e02_17"));
-        static By serviceTextbox = By.CssSelector(ReturnInputObject("e02_19"));
+          By startTextbox = By.CssSelector(ReturnInputObject("e02_16"));
+          By sceneTextbox = By.CssSelector(ReturnInputObject("e02_17"));
+          By serviceTextbox = By.CssSelector(ReturnInputObject("e02_19"));
 
-        static By checkboxValue = By.CssSelector("div.tools input");
+          By checkboxValue = By.CssSelector("div.tools input");
         #endregion
 
         #region  Delays
 
 
-        static By dispatchDelaysTextbox = By.CssSelector(ReturnSelectObject("e02_06"));
-        static By responseTextbox = By.CssSelector(ReturnSelectObject("e02_07"));
-        static By sceneDelaysTextbox = By.CssSelector(ReturnSelectObject("e02_08"));
-        static By transportTextbox = By.CssSelector(ReturnSelectObject("e02_09"));
-        static By turnAroundTextbox = By.CssSelector(ReturnSelectObject("e02_10"));
+          By dispatchDelaysTextbox = By.CssSelector(ReturnSelectObject("e02_06"));
+          By responseTextbox = By.CssSelector(ReturnSelectObject("e02_07"));
+          By sceneDelaysTextbox = By.CssSelector(ReturnSelectObject("e02_08"));
+          By transportTextbox = By.CssSelector(ReturnSelectObject("e02_09"));
+          By turnAroundTextbox = By.CssSelector(ReturnSelectObject("e02_10"));
         #endregion
 
         #region  Others on Scene 
-        static By serviceOnSceneTextbox = By.CssSelector(ReturnSelectObject("e08_02"));
-        static By otherEMSAgenciesTextbox = By.CssSelector(ReturnSelectObject("e08_01"));
-        static By emsSystemTextbox = By.CssSelector(ReturnInputObject("d04_17"));
-        static By responseDifferntialDropdown = By.CssSelector(ReturnSelectObject("e08_03"));
+          By serviceOnSceneTextbox = By.CssSelector(ReturnSelectObject("e08_02"));
+          By otherEMSAgenciesTextbox = By.CssSelector(ReturnSelectObject("e08_01"));
+          By emsSystemTextbox = By.CssSelector(ReturnInputObject("d04_17"));
+          By responseDifferntialDropdown = By.CssSelector(ReturnSelectObject("e08_03"));
         #endregion
 
-        #region  Actions
-        #endregion
+    
 
-        public static void SelectValueInDispositionDropdown(string value)
+        public void SelectValueInDispositionDropdown(string value)
         {
             SelectElement element = new SelectElement(driver.FindElement(dispositionDropdown));
             element.SelectByText(value);
         }
 
-        public static void EnterIncidentNum(string num)
+        public void EnterIncidentNum(string num)
         {
             var obj = driver.FindElement(incidentNumberTextbox);
             obj.Clear();
             obj.SendKeys(num);
         }
 
-        public static void ClickSaveButtonFromOptionsDropdown()
+        public void ClickSaveButtonFromOptionsDropdown()
         {
             driver.FindElements(optionsDropdown)[1].Click();
             Thread.Sleep(1000);
             driver.FindElement(saveLinkInsideOptionsDropdown).Click();
         }
 
-        public static void VerifyPCRSyncMessageDisplay()
+        public void VerifyPCRSyncMessageDisplay()
         {
             Thread.Sleep(5000);
             Assert.IsTrue(driver.FindElement(pcrSyncMessage).Text.Contains("PCR sync"), "Message is not coming");
         }
 
-        public static void ClickBackButton()
+        public void ClickBackButton()
         {
             driver.FindElement(backButton).Click();
             Thread.Sleep(3000);
         }
         
-        public static void EnterLocationDetails()
+        public void EnterLocationDetails()
         {
-            emdPerformedDropdown.SelectValueInDropdown("No");
-            emdCardNoTextbox.EnterText("12345");
-            locationZoneDropdown.SelectValueInDropdown("Not Applicable");
-            locationFacilityCodeDropdown.SelectValueInDropdown("Not Applicable");
+            emdPerformedDropdown.SelectValueInDropdown(pcrVar.IncidentLocationemdPerformed);
+            emdCardNoTextbox.EnterText(pcrVar.IncidentLocationemdCardNo);
+            locationZoneDropdown.SelectValueInDropdown(pcrVar.IncidentLocationlocationZone);
+            locationFacilityCodeDropdown.SelectValueInDropdown(pcrVar.IncidentLocationlocationFacilityCode);
         }
 
-        public static void EnterIncidentDetails(PCRVariables pcr)
+        public void EnterIncidentDetails()
         {
-            incidentNumberTextbox.EnterText(pcr.IncidentNumber);
-            responseUrgencyDropdown.SelectValueInDropdown("Not Applicable");
-            typeOfLocationDropdown.SelectValueInDropdown("Not Applicable");
-            natureOfIncidentDropdown.SelectValueInDropdown("Not Applicable");
-            cmsLevelDropdown.SelectValueInDropdown("Not Applicable");
+            incidentNumberTextbox.EnterText(pcrVar.IncidentNumber);
+            responseUrgencyDropdown.SelectValueInDropdown(pcrVar.ResponseUrgency);
+            typeOfLocationDropdown.SelectValueInDropdown(pcrVar.TypeOfLocation);
+            natureOfIncidentDropdown.SelectValueInDropdown(pcrVar.NatureOfIncident);
+            cmsLevelDropdown.SelectValueInDropdown(pcrVar.CmsLevel);
         }
 
-        public static void EnterSceneAddressDetails()
+        public void EnterSceneAddressDetails()
         {
             sceneAddressTextarea.Click();
             Thread.Sleep(2000);
-            googleLocSearchTextbox.EnterText("testing");
-            streetAddressTextbox.EnterText("testing");
-            streetAddress2Textbox.EnterText("testing");
-            cityTextbox.EnterText("Denver");
-            stateDropdown.SelectValueInDropdown("CO");
-            zipTextbox.EnterText("12345"); 
-            municipalCodeTextbox.EnterText("12345");
-            countryCodeTextbox.EnterText("001");
-            additionalNotesTextbox.EnterText("testing");
+            googleLocSearchTextbox.EnterText(pcrVar.SceneAddressGoogleLocSearch);
+            streetAddressTextbox.EnterText(pcrVar.SceneAddressStreetAddress);
+            streetAddress2Textbox.EnterText(pcrVar.SceneAddressstreetAddress2);
+            cityTextbox.EnterText(pcrVar.SceneAddressCity);
+            stateDropdown.SelectValueInDropdown(pcrVar.SceneAddressState);
+            zipTextbox.EnterText(pcrVar.SceneAddressZip); 
+            municipalCodeTextbox.EnterText(pcrVar.SceneAddressMunicipalCode);
+            countryCodeTextbox.EnterText(pcrVar.SceneAddressCountryCode);
+            additionalNotesTextbox.EnterText(pcrVar.SceneAddressAdditionalNotes);
             closeButton.Click();
 
         }
 
-        public static void EnterTimesDetails()
-        {
-            onsetTextbox.EnterText("1234");
-            receivedTextbox.EnterText("1234");
-            notifiedTextbox.EnterText("1234");
-            dispatchTextbox.EnterText("1234");
-            enrouteTextbox.EnterText("1234");
-            arrivalTextbox.EnterText("1234");
-            availableTextbox.EnterText("1234");
-            atBaseTextbox.EnterText("1234");
-            cancelledTextbox.EnterText("1234");
-        }
-
-        public static void EnterDispatchDetails()
-        {
-            callSignDropdown.SelectValueInDropdown("sign");
-            vehicleNumberDropdown.SelectValueInDropdown("Number");
-            modeToSceneDropdown.SelectValueInDropdown("No Lights or Sirens");
-            vehicleIncidentNumTextbox.EnterText("12345");
-            serviceRequestedDropdown.SelectValueInDropdown("Standby");
-            roleDropdown.SelectValueInDropdown("Rescue");
-        }
-
-        public static void EnterCrewDetails()
+        public void EnterCrewDetails()
         {
             Thread.Sleep(2000);
             crewNewButton.ClickOnSpecificNumber(1);
             Thread.Sleep(2000);
-            nameCrewTextbox.EnterText("test");
-            crewQuickSelectDropdown.SelectValueInDropdown("admin admin");
-            stateIdTextbox.EnterText("Stateid");
-            roleCrewDropdown.SelectValueInDropdown("Not Applicable");
-            certLevelDropdown.SelectValueInDropdown("Not Known");
+            nameCrewTextbox.EnterText(pcrVar.NameCrew);
+            crewQuickSelectDropdown.SelectValueInDropdown(pcrVar.CrewQuickSelect);
+            stateIdTextbox.EnterText(pcrVar.StateId);
+            roleCrewDropdown.SelectValueInDropdown(pcrVar.RoleCrew);
+            certLevelDropdown.SelectValueInDropdown(pcrVar.CertLevel);
             crewSaveButton.ClickOnSpecificNumber(1);
         }
 
-        public static void EnterMileageDetails()
+        public void EnterTimesDetails()
         {
-            startTextbox.EnterText("5678");
-            sceneTextbox.EnterText("5900");
-            serviceTextbox.EnterText("6000");
+            onsetTextbox.EnterText(pcrVar.IncidentTimeOnset);
+            receivedTextbox.EnterText(pcrVar.IncidentTimeReceived);
+            notifiedTextbox.EnterText(pcrVar.IncidentTimeNotified);
+            dispatchTextbox.EnterText(pcrVar.IncidentTimeDispatch);
+            enrouteTextbox.EnterText(pcrVar.IncidentTimeEnroute);
+            arrivalTextbox.EnterText(pcrVar.IncidentTimeArrival);
+            availableTextbox.EnterText(pcrVar.IncidentTimeAvailable);
+            atBaseTextbox.EnterText(pcrVar.IncidentTimeAtBase);
+            cancelledTextbox.EnterText(pcrVar.IncidentTimeCancelled);
+        }
+
+        public void EnterDispatchDetails()
+        {
+            callSignDropdown.SelectValueInDropdown(pcrVar.IncidentDispatchcallSign);
+            vehicleNumberDropdown.SelectValueInDropdown(pcrVar.IncidentDispatchvehicleNumber);
+            modeToSceneDropdown.SelectValueInDropdown(pcrVar.IncidentDispatchmodeToScene);
+            vehicleIncidentNumTextbox.EnterText(pcrVar.IncidentDispatchvehicleIncidentNum);
+            serviceRequestedDropdown.SelectValueInDropdown(pcrVar.IncidentDispatchserviceRequested);
+            roleDropdown.SelectValueInDropdown(pcrVar.IncidentDispatchrole);
+        }
+        public void EnterMileageDetails()
+        {
+            startTextbox.EnterText(pcrVar.IncidentMileagestart);
+            sceneTextbox.EnterText(pcrVar.IncidentMileagescene);
+            serviceTextbox.EnterText(pcrVar.IncidentMileageservice);
         }
               
-        public static void EnterDelaysDetails()
+        public void EnterDelaysDetails()
         {
             Thread.Sleep(2000);
             checkboxValue.ClickOnSpecificNumber(0);
             Thread.Sleep(2000);
-            dispatchDelaysTextbox.SelectValueInDropdown("Not Applicable");
-            responseTextbox.SelectValueInDropdown("Not Applicable");
-            sceneDelaysTextbox.SelectValueInDropdown("Not Available");
-            transportTextbox.SelectValueInDropdown("Not Applicable");
-            turnAroundTextbox.SelectValueInDropdown("Not Available");
+            dispatchDelaysTextbox.SelectValueInDropdown(pcrVar.IncidentDelaysdispatchDelays);
+            responseTextbox.SelectValueInDropdown(pcrVar.IncidentDelaysresponse);
+            sceneDelaysTextbox.SelectValueInDropdown(pcrVar.IncidentDelayssceneDelays);
+            transportTextbox.SelectValueInDropdown(pcrVar.IncidentDelaystransport);
+            turnAroundTextbox.SelectValueInDropdown(pcrVar.IncidentDelaysturnAround);
         }
 
-        public static void EnterOthersOnSceneDetails()
+        public void EnterOthersOnSceneDetails()
         {
             Thread.Sleep(2000);
             checkboxValue.ClickOnSpecificNumber(1);
             Thread.Sleep(2000);
-            serviceOnSceneTextbox.SelectValueInDropdown("Not Available");
-            otherEMSAgenciesTextbox.SelectValueInDropdown("Not Available");
-            emsSystemTextbox.EnterText("123456");
-            responseDifferntialDropdown.SelectValueInDropdown("Not Available");  
+            serviceOnSceneTextbox.SelectValueInDropdown(pcrVar.IncidentOthersOnSceneserviceOnScene);
+            otherEMSAgenciesTextbox.SelectValueInDropdown(pcrVar.IncidentOthersOnSceneotherEMSAgencies);
+            emsSystemTextbox.EnterText(pcrVar.IncidentOthersOnSceneemsSystem);
+            responseDifferntialDropdown.SelectValueInDropdown(pcrVar.IncidentOthersOnSceneresponseDifferntial);  
         }
     }
 }

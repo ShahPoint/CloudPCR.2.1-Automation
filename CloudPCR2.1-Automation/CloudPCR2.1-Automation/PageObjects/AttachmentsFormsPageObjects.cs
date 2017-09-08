@@ -11,12 +11,19 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
     class AttachmentsFormsPageObjects : SelectingBrowsers
     {
-        static By addNoteTagsTextbox = By.CssSelector("select.form-control");
-        static By createButton = By.CssSelector("button.btn.btn-default");
+        PCRVariables pcrVar = new PCRVariables();
 
-        public static void EnterAttachmentDetails()
+        public AttachmentsFormsPageObjects(PCRVariables pcr)
         {
-            addNoteTagsTextbox.SelectValueInDropdown("Mulvane IDM");
+            pcrVar = pcr;
+        }
+
+        By addNoteTagsTextbox = By.CssSelector("select.form-control");
+        By createButton = By.CssSelector("button.btn.btn-default");
+
+        public void EnterAttachmentDetails()
+        {
+            addNoteTagsTextbox.SelectValueInDropdown(pcrVar.AttachmentDetailsaddNoteTags);
             //createButton.Click();
             //Thread.Sleep(4000);
             //createButton.ClickOnSpecificNumber(12);

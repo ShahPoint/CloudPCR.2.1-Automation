@@ -11,128 +11,136 @@ namespace CloudPCR2._1_Automation.PageObjects
 {
     public class AssessmentPageObjects : SelectingBrowsers
     {
+        PCRVariables pcrVar = new PCRVariables();
+
+        public AssessmentPageObjects(PCRVariables pcr)
+        {
+            pcrVar = pcr;
+        }
+
         #region  patient complaints
-        static By chiefComplaintTextbox = By.CssSelector(ReturnInputObject("e09_05"));
-        static By possibleInjuryDropdown = By.CssSelector(ReturnSelectObject("e09_04"));
+         By chiefComplaintTextbox = By.CssSelector(ReturnInputObject("e09_05"));
+         By possibleInjuryDropdown = By.CssSelector(ReturnSelectObject("e09_04"));
         #endregion
 
         #region Impression
-        static By complaintLocationDropdown = By.CssSelector(ReturnSelectObject("e09_11"));
-        static By organSystemDropdown = By.CssSelector(ReturnSelectObject("e09_12"));
-        static By primarySymptomsDropdown = By.CssSelector(ReturnSelectObject("e09_13"));
-        static By impressionDropdown = By.CssSelector(ReturnSelectObject("e09_15"));
-        static By otherSymptomsDropdown = By.CssSelector(ReturnSelectObject("e09_14"));
-        static By secondaryImpressionDropdown = By.CssSelector(ReturnSelectObject("e09_16"));
-        static By drugsAlcoholDropdown = By.CssSelector(ReturnSelectObject("e12_19"));
+        By complaintLocationDropdown = By.CssSelector(ReturnSelectObject("e09_11"));
+        By organSystemDropdown = By.CssSelector(ReturnSelectObject("e09_12"));
+        By primarySymptomsDropdown = By.CssSelector(ReturnSelectObject("e09_13"));
+        By impressionDropdown = By.CssSelector(ReturnSelectObject("e09_15"));
+        By otherSymptomsDropdown = By.CssSelector(ReturnSelectObject("e09_14"));
+        By secondaryImpressionDropdown = By.CssSelector(ReturnSelectObject("e09_16"));
+        By drugsAlcoholDropdown = By.CssSelector(ReturnSelectObject("e12_19"));
 
         static By protocolsDropdown = By.CssSelector(ReturnSelectObject("e17_01"));
 
         #endregion
 
         #region vehicle collision
-        static By vehicleCollisionDropdown = By.CssSelector(ReturnSelectObject("e10_05"));
-        static By reportNumberTextbox = By.CssSelector(ReturnInputObject("e22_03"));
-        static By ptLocationDropdown = By.CssSelector(ReturnSelectObject("e10_07"));
-        static By rowDropdown = By.CssSelector(ReturnSelectObject("e10_06"));
-        static By safetyEquipmentDropdown = By.CssSelector(ReturnSelectObject("e10_08"));
-        static By airbagsDropdown = By.CssSelector(ReturnSelectObject("e10_09"));
-        static By injuryIndicatorsDropdown = By.CssSelector(ReturnSelectObject("e10_04"));
+        By vehicleCollisionDropdown = By.CssSelector(ReturnSelectObject("e10_05"));
+        By reportNumberTextbox = By.CssSelector(ReturnInputObject("e22_03"));
+        By ptLocationDropdown = By.CssSelector(ReturnSelectObject("e10_07"));
+        By rowDropdown = By.CssSelector(ReturnSelectObject("e10_06"));
+        By safetyEquipmentDropdown = By.CssSelector(ReturnSelectObject("e10_08"));
+        By airbagsDropdown = By.CssSelector(ReturnSelectObject("e10_09"));
+        By injuryIndicatorsDropdown = By.CssSelector(ReturnSelectObject("e10_04"));
 
-        static By checkboxValue = By.CssSelector("div.tools input");
+        By checkboxValue = By.CssSelector("div.tools input");
         #endregion
 
         #region  Trauma
-        static By heightOfFallTextbox = By.CssSelector(ReturnInputObject("e10_10"));
-        static By causeOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_01"));
-        static By intentOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_02"));
+        By heightOfFallTextbox = By.CssSelector(ReturnInputObject("e10_10"));
+        By causeOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_01"));
+        By intentOfInjuryDropdown = By.CssSelector(ReturnSelectObject("e10_02"));
         #endregion
 
         #region prior aid given
-        static By priorAidDropdown = By.CssSelector(ReturnSelectObject("e09_01"));
-        static By treatedByDropdown = By.CssSelector(ReturnSelectObject("e09_02"));
-        static By aidOutcomeDropdown = By.CssSelector(ReturnSelectObject("e09_03"));
+        By priorAidDropdown = By.CssSelector(ReturnSelectObject("e09_01"));
+        By treatedByDropdown = By.CssSelector(ReturnSelectObject("e09_02"));
+        By aidOutcomeDropdown = By.CssSelector(ReturnSelectObject("e09_03"));
         #endregion
 
         #region cardiac arrest
-        static By cardiacArrestDropdown = By.CssSelector(ReturnSelectObject("e11_01"));
-        static By cardiacArrestTimeDropdown = By.CssSelector(ReturnSelectObject("e11_08"));
-        static By etiologyDropdown = By.CssSelector(ReturnSelectObject("e11_02"));
-        static By witnessedByDropdown = By.CssSelector(ReturnSelectObject("e11_04"));
-        static By firstRythmDropdown = By.CssSelector(ReturnSelectObject("e11_05"));
-        static By circulationReturnDropdown = By.CssSelector(ReturnSelectObject("e11_06"));
-        static By resusitationsDropdown = By.CssSelector(ReturnSelectObject("e11_03"));
-        static By discontinueReasonDropdown = By.CssSelector(ReturnSelectObject("e11_10"));
-        static By discontinueTimeTextbox = By.CssSelector(ReturnInputObject("e11_09_Time"));
-        static By discontinueDateTextbox = By.CssSelector(ReturnInputObject("e11_09_Date"));
+        By cardiacArrestDropdown = By.CssSelector(ReturnSelectObject("e11_01"));
+        By cardiacArrestTimeDropdown = By.CssSelector(ReturnSelectObject("e11_08"));
+        By etiologyDropdown = By.CssSelector(ReturnSelectObject("e11_02"));
+        By witnessedByDropdown = By.CssSelector(ReturnSelectObject("e11_04"));
+        By firstRythmDropdown = By.CssSelector(ReturnSelectObject("e11_05"));
+        By circulationReturnDropdown = By.CssSelector(ReturnSelectObject("e11_06"));
+        By resusitationsDropdown = By.CssSelector(ReturnSelectObject("e11_03"));
+        By discontinueReasonDropdown = By.CssSelector(ReturnSelectObject("e11_10"));
+        By discontinueTimeTextbox = By.CssSelector(ReturnInputObject("e11_09_Time"));
+        By discontinueDateTextbox = By.CssSelector(ReturnInputObject("e11_09_Date"));
         #endregion
 
-        public static void EnterPatientComplaintDetails()
+        public  void EnterPatientComplaintDetails()
         {
-            chiefComplaintTextbox.EnterText("12345");
-            possibleInjuryDropdown.SelectValueInDropdown("Yes");
+          
+            chiefComplaintTextbox.EnterText(pcrVar.AssessmentComplaintchiefComplaint);
+            possibleInjuryDropdown.SelectValueInDropdown(pcrVar.AssessmentComplaintpossibleInjury);
         }
 
-        public static void EnterImpressionDetails()
+        public  void EnterImpressionDetails()
         {
-            complaintLocationDropdown.SelectValueInDropdown("Back");
-            organSystemDropdown.SelectValueInDropdown("Skin");
-            primarySymptomsDropdown.SelectValueInDropdown("Fever");
-            impressionDropdown.SelectValueInDropdown("Not Known");
-            otherSymptomsDropdown.SelectValueInDropdown("Bleeding");
-            secondaryImpressionDropdown.SelectValueInDropdown("Not Known");
-            drugsAlcoholDropdown.SelectValueInDropdown("Not Known");
+            complaintLocationDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressioncomplaintLocation);
+            organSystemDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressionorganSystem);
+            primarySymptomsDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressionprimarySymptoms);
+            impressionDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressionimpression);
+            otherSymptomsDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressionotherSymptoms);
+            secondaryImpressionDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressionsecondaryImpression);
+            drugsAlcoholDropdown.SelectValueInDropdown(pcrVar.AssessmentImpressiondrugsAlcohol);
         }
 
-        public static void EnterProtocolDetails()
+        public  void EnterProtocolDetails()
         {
-            protocolsDropdown.SelectValueInDropdown("Airway");
+            protocolsDropdown.SelectValueInDropdown(pcrVar.AssessmentProtocolprotocols);
         }
 
-        public static void EnterVehicleCollisionDetails()
+        public  void EnterVehicleCollisionDetails()
         {
             checkboxValue.ClickOnSpecificNumber(0);
             Thread.Sleep(1000);
-            vehicleCollisionDropdown.SelectValueInDropdown("Not Known");
-            reportNumberTextbox.EnterText("Not Known");
-            ptLocationDropdown.SelectValueInDropdown("Not Known");
-            rowDropdown.SelectValueInDropdown("2");
-            safetyEquipmentDropdown.SelectValueInDropdown("Not Applicable");
-            airbagsDropdown.SelectValueInDropdown("Not Known");
-            injuryIndicatorsDropdown.SelectValueInDropdown("Not Available");
+            vehicleCollisionDropdown.SelectValueInDropdown(pcrVar.AssessmentVehicleCollisionvehicleCollision);
+            reportNumberTextbox.EnterText(pcrVar.AssessmentVehicleCollisionreportNumber);
+            ptLocationDropdown.SelectValueInDropdown(pcrVar.AssessmentVehicleCollisionptLocation);
+            rowDropdown.SelectValueInDropdown(pcrVar.AssessmentVehicleCollisionrow);
+            safetyEquipmentDropdown.SelectValueInDropdown(pcrVar.AssessmentVehicleCollisionsafetyEquipment);
+            airbagsDropdown.SelectValueInDropdown(pcrVar.AssessmentVehicleCollisionairbags);
+            injuryIndicatorsDropdown.SelectValueInDropdown(pcrVar.AssessmentVehicleCollisioninjuryIndicators);
         }
 
-        public static void EnterTraumaDetails()
+        public  void EnterTraumaDetails()
         {
             checkboxValue.ClickOnSpecificNumber(1);
             Thread.Sleep(1000);
-            heightOfFallTextbox.EnterText("4");
-            causeOfInjuryDropdown.SelectValueInDropdown("Not Known");
-            intentOfInjuryDropdown.SelectValueInDropdown("Not Known");
+            heightOfFallTextbox.EnterText(pcrVar.AssessmentTraumaheightOfFall);
+            causeOfInjuryDropdown.SelectValueInDropdown(pcrVar.AssessmentTraumacauseOfInjury);
+            intentOfInjuryDropdown.SelectValueInDropdown(pcrVar.AssessmentTraumaintentOfInjury);
         }
 
-        public static void EnterPriorAidGivenDetails()
+        public  void EnterPriorAidGivenDetails()
         {
             checkboxValue.ClickOnSpecificNumber(2);
             Thread.Sleep(1000);
-            priorAidDropdown.SelectValueInDropdown("Not Known");
-            treatedByDropdown.SelectValueInDropdown("Not Known");
-            aidOutcomeDropdown.SelectValueInDropdown("Not Known");
+            priorAidDropdown.SelectValueInDropdown(pcrVar.AssessmentPriorAidGivenpriorAid);
+            treatedByDropdown.SelectValueInDropdown(pcrVar.AssessmentPriorAidGiventreatedBy);
+            aidOutcomeDropdown.SelectValueInDropdown(pcrVar.AssessmentPriorAidGivenaidOutcome);
         }
 
-        public static void EnterCardiacArrestDetails()
+        public  void EnterCardiacArrestDetails()
         {
             checkboxValue.ClickOnSpecificNumber(3);
             Thread.Sleep(1000);
-            cardiacArrestDropdown.SelectValueInDropdown("Not Known");
-            cardiacArrestTimeDropdown.SelectValueInDropdown("Not Known");
-            etiologyDropdown.SelectValueInDropdown("Other");
-            witnessedByDropdown.SelectValueInDropdown("Not Available");
-            firstRythmDropdown.SelectValueInDropdown("Other");
-            circulationReturnDropdown.SelectValueInDropdown("Not Known");
-            resusitationsDropdown.SelectValueInDropdown("Not Applicable");
-            discontinueReasonDropdown.SelectValueInDropdown("Not Available");
-            discontinueTimeTextbox.EnterText("1234");
-            discontinueDateTextbox.EnterText("12121988");
+            cardiacArrestDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestDD);
+            cardiacArrestTimeDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestTime);
+            etiologyDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestetiology);
+            witnessedByDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestwitnessed);
+            firstRythmDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestfirstRythm);
+            circulationReturnDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestcirculationReturn);
+            resusitationsDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestresusitations);
+            discontinueReasonDropdown.SelectValueInDropdown(pcrVar.AssessmentCardiacArrestdiscontinueReason);
+            discontinueTimeTextbox.EnterText(pcrVar.AssessmentCardiacArrestdiscontinueTime);
+            discontinueDateTextbox.EnterText(pcrVar.AssessmentCardiacArrestdiscontinueDate);
         }
 
     }
